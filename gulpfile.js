@@ -13,8 +13,8 @@ gulp.task('html', function() {
   console.log("Imagine something useful to be done to your HTML file here!");
 });
 
-
 gulp.task('styles', function() {
+ console.log("Imagine SASS or POSTCSS done to your CSS file's here!");
   // PostCSS attached to GULP work flow
   // pipes in gulp:  gulp.src(./main.css) -->  gulp.dest(./temp/main.css)
   // By the way, gulp.src() is asyncronus function
@@ -22,11 +22,10 @@ gulp.task('styles', function() {
     .pipe(postcss([cssvars, nested, autoprefixer]))  // filter hook for POSTCSS to include
                                           // postcss-simple-vars postcss-nested autoprefixer
     .pipe(gulp.dest('./app/temp/styles')); // destination directory
-  // console.log("Imagine SASS or POSTCSS done to your CSS file's here!");
 });
 
 
-// gulp watch  command to watch for files modifications
+// "gulp watch"  command to watch for HTML,CSS files modifications
 gulp.task('watch', function() {
   // trigger task "html"  when ./app/index.html changed
     watch('./app/index.html', function(){
