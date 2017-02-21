@@ -1,15 +1,6 @@
-$mainBlue:  #2f5572;
-body {
-    color: $mainBlue;
-    padding: 25px;
-    margin:10px;
-    columns: 300px 2;
-  }
-
-  /* Nested Postcss plug-in test */
-.box {
-  a {
-    display: block;
-    padding: 10px;
-  }
-}
+/* Import normalize.css npm package */
+@import 'normalize.css';
+/* Import POSTCSS base of the project*/
+@import 'base/_global';
+/* Import POSTCSS modules of the project*/
+@import "modules/_large-hero";
