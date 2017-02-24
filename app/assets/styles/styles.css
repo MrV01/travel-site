@@ -2,5 +2,7 @@
 @import 'normalize.css';
 /* Import POSTCSS base of the project*/
 @import 'base/_global';
+@import 'base/_variables';
 /* Import POSTCSS modules of the project*/
 @import "modules/_large-hero";
+@import "modules/_btn";
