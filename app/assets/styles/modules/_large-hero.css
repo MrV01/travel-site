@@ -10,18 +10,35 @@
     text-align: center;
   }
 
+  /* Example of mobile first pattern */
   &__title {
+    /* baselne for all screens including super tiny */
     font-weight: 300;
     color: $mainBlue;
-    font-size: 4.8rem;
     margin:0;
+    font-size: 1.1rem;
+    /* Small screens ~ 530px */
+    @mixin atSmall {
+      font-size: 2.0rem;
+    }
+    /* Medium screens ~ 800px */
+    @mixin atMedium {
+      font-size: 3.2rem;
+    }
+    /* Large sceens ~ 1200px */
+    @mixin atLarge {
+      font-size: 4.8rem;
+    }
   }
 
   &__subtitle {
     font-weight: 300;
     color: $mainBlue;
-    font-size: 2.9rem;
     margin:0;
+    font-size: 1.1rem;
+    @mixin atSmall {
+      font-size: 1.8rem;
+    }
   }
 
   &__description {
@@ -29,7 +46,6 @@
     font-size: 1.875rem;
     font-weight: 100;
     font-shadow: 2px 2px 0 rgba(0, 0, 0, .1);
-
   }
 
 }

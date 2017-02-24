@@ -377,6 +377,7 @@ img {
 }
 /* mainBlue Color code */
 /* mainOrange Color code */
+/* Mixins are "reusable bits of code" */
 /* Import POSTCSS modules of the project*/
 .large-hero { /* POSTCSS will substittute "&" by .large-hero in nested BEM classes */
   position: relative;
@@ -392,17 +393,41 @@ img {
   width: 100%;
   text-align: center;
 }
-.large-hero__title {
+/* Example of mobile first pattern */
+.large-hero__title {/* baselne for all screens including super tiny */
   font-weight: 300;
   color: #2f5572;
-  font-size: 4.8rem;
   margin:0;
+  font-size: 1.1rem;
+}
+/* Small screens ~ 530px */
+@media ( min-width: 530px) {
+  .large-hero__title {
+    font-size: 2.0rem;
+  }
+}
+/* Medium screens ~ 800px */
+@media ( min-width: 800px) {
+  .large-hero__title {
+    font-size: 3.2rem;
+  }
+}
+/* Large sceens ~ 1200px */
+@media ( min-width: 1200px) {
+  .large-hero__title {
+    font-size: 4.8rem;
+  }
 }
 .large-hero__subtitle {
   font-weight: 300;
   color: #2f5572;
-  font-size: 2.9rem;
   margin:0;
+  font-size: 1.1rem;
+}
+@media ( min-width: 530px) {
+  .large-hero__subtitle {
+    font-size: 1.8rem;
+  }
 }
 .large-hero__description {
   color: #FFF;

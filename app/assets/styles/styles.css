@@ -3,6 +3,7 @@
 /* Import POSTCSS base of the project*/
 @import 'base/_global';
 @import 'base/_variables';
+@import 'base/_mixins';
 /* Import POSTCSS modules of the project*/
 @import "modules/_large-hero";
 @import "modules/_btn";
