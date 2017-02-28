@@ -1,0 +1,8 @@
+/* Pattern of vertical spacing, etc between page sections */
+.page-section {
+  padding: 4.5rem 0; /* padding top, bottom:4.5rem left,right: 0 */
+  &--blue {
+    background-color: $mainBlue;
+    color: #FFF;
+  }
+}

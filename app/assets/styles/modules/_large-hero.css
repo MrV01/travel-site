@@ -1,6 +1,16 @@
 .large-hero { /* POSTCSS will substittute "&" by .large-hero in nested BEM classes */
+  border-bottom: 10px solid $mainBlue; /* Add bar line at the bottom */
   position: relative;
-  /* nested BEM .large-hero__ classes */
+  /* nested BEM .large-hero__<classes> */
+  &__image {
+      display: block; /* By default was: inline. Browser believes that image
+                          is something like line of text.
+                          Text line requires empty space underneath for letters
+                          like: 'y', 'g' */
+      /* display: block  means that element aligns perfectly like <div>
+          and no extra space required   */
+  }
+
   &__text-content {
     position: absolute;
     top: 50%;
@@ -16,14 +26,14 @@
     font-weight: 300;
     color: $mainBlue;
     margin:0;
-    font-size: 1.1rem;
+    font-size: 2.4rem;
     /* Small screens ~ 530px */
     @mixin atSmall {
-      font-size: 2.0rem;
+      font-size: 4.8rem;
     }
     /* Medium screens ~ 800px */
     @mixin atMedium {
-      font-size: 3.2rem;
+      font-size: 4.8rem;
     }
     /* Large sceens ~ 1200px */
     @mixin atLarge {
@@ -35,17 +45,25 @@
     font-weight: 300;
     color: $mainBlue;
     margin:0;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
+    /* starting from Small screens ~ 530px, use 2.9rem fontsize */
     @mixin atSmall {
-      font-size: 1.8rem;
+      font-size: 2.9rem;
     }
   }
 
   &__description {
     color: #FFF;
-    font-size: 1.875rem;
+    font-size: 1.1rem; /* for tiny screens */
     font-weight: 100;
     font-shadow: 2px 2px 0 rgba(0, 0, 0, .1);
+    max-width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+    /* starting from Small screens ~ 530px, use 1.875rem fontsize */
+    @mixin atSmall {
+      font-size: 1.875rem;
+    }
   }
 
 }

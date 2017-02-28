@@ -7,3 +7,7 @@
 /* Import POSTCSS modules of the project*/
 @import "modules/_large-hero";
 @import "modules/_btn";
+/* Import padding-wrapper file  */
+@import "modules/_wrapper";
+/* Import page section file */
+@import "modules/_page-section"; 
