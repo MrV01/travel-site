@@ -1,0 +1,38 @@
+/* Headline block */
+
+.headline {
+  font-weight: 300;
+  font-size: 2.875rem;
+  color: $mainBlue;
+  &--centered {
+    text-align: center;
+  }
+  &--orange {
+    color: $mainOrange;
+  }
+  &--small{
+    font-size: 1.875rem; /* 30px (measured on the design image)
+                    divided by 16px (from the default settings) */
+  }
+  &--narrow {
+    max-width: 500px; /* narrow headline */
+    margin-left: auto; /* centered by itself,
+                regardless of previous element */
+    margin-right: auto;
+  }
+  &--light {
+    font-weight: 100;
+  }
+  strong {  /* element tag "strong" font weight */
+    font-weight: 400;
+  }
+  &--b-margin-small {
+    margin-bottom: .5em;  /* em - relative to the element itself */
+                          /* rem - relative to default global settings */
+  }
+
+  &--b-margin-large {
+    margin-bottom: 1.6em; /* em - relative to the element itself */
+                          /* rem - relative to default global settings */
+  }
+}

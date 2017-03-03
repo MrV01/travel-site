@@ -10,4 +10,6 @@
 /* Import padding-wrapper file  */
 @import "modules/_wrapper";
 /* Import page section file */
-@import "modules/_page-section"; 
+@import "modules/_page-section";
+/* Import headline block file */
+@import "modules/_headline";

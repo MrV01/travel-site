@@ -491,4 +491,39 @@ img {
 .page-section--blue {
   background-color: #2f5572;
   color: #FFF;
-} 
+}
+/* Import headline block file */
+/* Headline block */
+.headline {
+  font-weight: 300;
+  font-size: 2.875rem;
+  color: #2f5572;
+}
+.headline--centered {
+  text-align: center;
+}
+.headline--orange {
+  color: #ffb914;
+}
+.headline--small{
+  font-size: 1.875rem;/* 30px (measured on the design image)
+                    divided by 16px (from the default settings) */
+}
+.headline--narrow {
+  max-width: 500px;/* narrow headline */
+  margin-left: auto;/* centered by itself,
+                regardless of previous element */
+  margin-right: auto;
+}
+.headline--light {
+  font-weight: 100;
+}
+.headline strong {/* element tag "strong" font weight */
+  font-weight: 400;
+}
+.headline--b-margin-small {
+  margin-bottom: .5em;/* em - relative to the element itself *//* rem - relative to default global settings */
+}
+.headline--b-margin-large {
+  margin-bottom: 1.6em;/* em - relative to the element itself *//* rem - relative to default global settings */
+}
