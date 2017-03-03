@@ -13,3 +13,5 @@
 @import "modules/_page-section";
 /* Import headline block file */
 @import "modules/_headline";
+/* Import reusable column pattern file*/
+@import "modules/_row"; 

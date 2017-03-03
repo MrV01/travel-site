@@ -1,18 +1,26 @@
 /* Headline block */
 
 .headline {
+  font-size: 1.9rem; /* baseline for tiny screens */
   font-weight: 300;
-  font-size: 2.875rem;
   color: $mainBlue;
+
+  @mixin atSmall {
+    font-size: 2.875rem;
+  }
+
   &--centered {
     text-align: center;
   }
   &--orange {
     color: $mainOrange;
   }
-  &--small{
-    font-size: 1.875rem; /* 30px (measured on the design image)
-                    divided by 16px (from the default settings) */
+  &--small {
+    font-size: 1.2rem; /* baseline for tiny screens */
+    @mixin atSmall {
+      font-size: 1.875rem; /* 30px (measured on the design image)
+                        divided by 16px (from the default settings) */
+    }
   }
   &--narrow {
     max-width: 500px; /* narrow headline */

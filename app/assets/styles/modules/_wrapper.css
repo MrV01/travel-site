@@ -1,8 +1,21 @@
 .wrapper {
+  /* background-color: green; -- for debugging */
+  /* hide extra margine of floats, etc  */
+  overflow: hidden;
   padding-left: 18px;
   padding-right: 18px;
   max-width: 1200px;
   /* Content Centered by margins left,right : auto */
   margin-left: auto;
   margin-right: auto;
+  &--medium { /* narrow then 1200px default */
+    max-width: 976px;
+  }
+
+  /* wrapper nested with another wrapper shold not have horizontal padding */
+  .wrapper {
+      padding-left: 0;
+      padding-right: 0;
+  }
+
 }

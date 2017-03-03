@@ -1,4 +1,6 @@
-/* Mixins are "reusable bits of code" */
+/* Mixins are "reusable bits of code" plug-in */
+
+
 @define-mixin atSmall {
   @media ( min-width: 530px) {
     @mixin-content;
@@ -14,5 +16,14 @@
 @define-mixin atLarge {
   @media ( min-width: 1200px) {
     @mixin-content;
+  }
+}
+
+/* Mixin to clear floats in .css files */
+@define-mixin clearfix {
+  &::after {
+    content: "";
+    clear:both;
+    display: table;
   }
 }

@@ -375,9 +375,17 @@ img {
   max-width: 100%;
   height: auto;
 }
+/* In recent years box-sizing: border-box CSS property  */
+/* Is added into global setting for each element to overwrite
+   browsers defaults */
+/* Browser will not add padding to the total width of row */
+* {
+  box-sizing: border-box;
+}
 /* mainBlue Color code */
 /* mainOrange Color code */
-/* Mixins are "reusable bits of code" */
+/* Mixins are "reusable bits of code" plug-in */
+/* Mixin to clear floats in .css files */
 /* Import POSTCSS modules of the project*/
 .large-hero { /* POSTCSS will substittute "&" by .large-hero in nested BEM classes */
   border-bottom: 10px solid #2f5572; /* Add bar line at the bottom */
@@ -475,19 +483,37 @@ img {
 }
 /* Import padding-wrapper file  */
 .wrapper {
+  /* background-color: green; -- for debugging */
+  /* hide extra margine of floats, etc  */
+  overflow: hidden;
   padding-left: 18px;
   padding-right: 18px;
   max-width: 1200px;
   /* Content Centered by margins left,right : auto */
   margin-left: auto;
   margin-right: auto;
+
+}
+.wrapper--medium {/* narrow then 1200px default */
+  max-width: 976px;
+}
+/* wrapper nested with another wrapper shold not have horizontal padding */
+.wrapper .wrapper {
+  padding-left: 0;
+  padding-right: 0;
 }
 /* Import page section file */
 /* Pattern of vertical spacing, etc between page sections */
 .page-section {
-  padding: 4.5rem 0;
+  /* Mobile screens support added*/
+  padding: 1.2rem 0;
 }
-/* padding top, bottom:4.5rem left,right: 0 */
+/* new baseline for a small screens */
+@media ( min-width: 800px) {
+  .page-section {/* Medium sized screen */
+    padding: 4.5rem 0;/* padding top, bottom:4.5rem left,right: 0 */
+  }
+}
 .page-section--blue {
   background-color: #2f5572;
   color: #FFF;
@@ -495,9 +521,14 @@ img {
 /* Import headline block file */
 /* Headline block */
 .headline {
+  font-size: 1.9rem; /* baseline for tiny screens */
   font-weight: 300;
-  font-size: 2.875rem;
   color: #2f5572;
+}
+@media ( min-width: 530px) {
+  .headline {
+    font-size: 2.875rem;
+  }
 }
 .headline--centered {
   text-align: center;
@@ -505,9 +536,15 @@ img {
 .headline--orange {
   color: #ffb914;
 }
-.headline--small{
-  font-size: 1.875rem;/* 30px (measured on the design image)
-                    divided by 16px (from the default settings) */
+.headline--small {
+  font-size: 1.2rem;
+}
+/* baseline for tiny screens */
+@media ( min-width: 530px) {
+  .headline--small {
+    font-size: 1.875rem;/* 30px (measured on the design image)
+                        divided by 16px (from the default settings) */
+  }
 }
 .headline--narrow {
   max-width: 500px;/* narrow headline */
@@ -527,3 +564,47 @@ img {
 .headline--b-margin-large {
   margin-bottom: 1.6em;/* em - relative to the element itself *//* rem - relative to default global settings */
 }
+/* Import reusable column pattern file*/
+/* Reusable column layout pattern */
+/* Assuming 12 column vertical grid layout */
+/* the has been moved to base/_mixins "clearfix" for reusability sake */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/* background-color: yellow; -- for debugging purposes  */
+.row--gutters {
+  margin-right: -65px;/* to get rid of the last column right margin  */
+}
+/*  &::after {
+    content: "";
+    clear:both;
+    display: table;
+  }
+  */
+.row--gutters > div {/* add padding to direct childs <div>s */
+  padding-right: 65px;/* Browser will not add padding to the total width of row *//* In recent years box-sizing: border-box CSS property  *//* Is added into global setting for each element to overwrite
+       browsers defaults base/_global.css */
+}
+/* better way to clear floats is ::after pseudo selector */
+@media ( min-width: 800px) {
+  .row {/* use two columns layout on medium or larger screens */
+  }
+  .row__medium-4 {
+    float: left;
+    width: 33.33%;/* 4/12 = 33.33% */
+  }
+  .row__medium-8 {
+    float: left;
+    width: 66.66%;/* 8/12 = 66.66% */
+  }
+}
+/* <div class="clear-me">  MUST come after all the floating siblings */
+/* Main parent <div class="row" will know how tall he is */
+/* Is not recommended because the empty div element created in the HTML
+  NOT the best practice  */
+/* .clear-me {
+    clear: both;
+}
+*/ 
