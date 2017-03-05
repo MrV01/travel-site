@@ -366,6 +366,11 @@ template {
   display: none;
 }
 /* Import POSTCSS base of the project*/
+/* mainBlue Color code */
+/* mainOrange Color code */
+/* Mixins are "reusable bits of code" plug-in */
+/* Mixin to clear floats in .css files */
+/* Global CSS file is using _variables and _mixins */
 /* Global CSS  to trickle down to each element */
 body {
   font-family: 'Roboto', sans-serif;
@@ -382,10 +387,10 @@ img {
 * {
   box-sizing: border-box;
 }
-/* mainBlue Color code */
-/* mainOrange Color code */
-/* Mixins are "reusable bits of code" plug-in */
-/* Mixin to clear floats in .css files */
+/* Links are orange colored globally  */
+a {
+  color: #ffb914; 
+}
 /* Import POSTCSS modules of the project*/
 .large-hero { /* POSTCSS will substittute "&" by .large-hero in nested BEM classes */
   border-bottom: 10px solid #2f5572; /* Add bar line at the bottom */
@@ -488,11 +493,10 @@ img {
   overflow: hidden;
   padding-left: 18px;
   padding-right: 18px;
-  max-width: 1200px;
+  max-width: 1236px;  /* 1200px + 36 (box-sizing: border-box; CSS property for every element ) */
   /* Content Centered by margins left,right : auto */
   margin-left: auto;
   margin-right: auto;
-
 }
 .wrapper--medium {/* narrow then 1200px default */
   max-width: 976px;
@@ -501,6 +505,15 @@ img {
 .wrapper .wrapper {
   padding-left: 0;
   padding-right: 0;
+}
+.wrapper--b-margin {
+  margin-bottom:1rem;
+}
+/* baseline tiny screens */
+@media ( min-width: 530px) {
+  .wrapper--b-margin {
+    margin-bottom: 3.875rem;
+  }
 }
 /* Import page section file */
 /* Pattern of vertical spacing, etc between page sections */
@@ -564,6 +577,9 @@ img {
 .headline--b-margin-large {
   margin-bottom: 1.6em;/* em - relative to the element itself *//* rem - relative to default global settings */
 }
+.headline--no-t-margin {/* remove top margin modifier */
+  margin-top: 0;
+}
 /* Import reusable column pattern file*/
 /* Reusable column layout pattern */
 /* Assuming 12 column vertical grid layout */
@@ -587,17 +603,31 @@ img {
   padding-right: 65px;/* Browser will not add padding to the total width of row *//* In recent years box-sizing: border-box CSS property  *//* Is added into global setting for each element to overwrite
        browsers defaults base/_global.css */
 }
+/* for tiny and small size screns, add bottom margin */
+.row__b-margin-until-medium {
+  margin-bottom: 1rem;
+}
 /* better way to clear floats is ::after pseudo selector */
 @media ( min-width: 800px) {
-  .row {/* use two columns layout on medium or larger screens */
+  .row {/* starting medium size screens,
+            reset margin-bottom to 0 *//* use two columns layout on medium or larger screens */
+  }
+  .row__b-margin-until-medium {
+    margin-bottom: 0;
   }
   .row__medium-4 {
     float: left;
     width: 33.33%;/* 4/12 = 33.33% */
   }
+  .row__medium-4--larger {
+    width: 37%;/* 4/12 = 33.33% */
+  }
   .row__medium-8 {
     float: left;
     width: 66.66%;/* 8/12 = 66.66% */
+  }
+  .row__medium-8--smaller {
+    width: 63%;/* 8/12 = 66.66% */
   }
 }
 /* <div class="clear-me">  MUST come after all the floating siblings */
@@ -607,4 +637,18 @@ img {
 /* .clear-me {
     clear: both;
 }
-*/ 
+*/
+/* Generic content container */
+/* background-color: yellow; */
+.generic-content-container p {
+  line-height: 1.65;/* no unit measurement required *//* base style does not require font size, usually */
+  margin: 1.8rem 0;
+}
+@media ( min-width: 530px) {
+  .generic-content-container p {
+    font-size: 1.125rem;
+  }
+}
+.generic-content-container p a {
+  font-weight: 700;
+}

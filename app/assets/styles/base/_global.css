@@ -16,3 +16,8 @@ img {
 * {
   box-sizing: border-box;
 }
+
+/* Links are orange colored globally  */
+a {
+  color: $mainOrange; 
+}

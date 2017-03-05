@@ -25,9 +25,9 @@
     <!-- Picture element used for
         for selection of screen size-cropped image -->
     <picture>
-      <source srcset="assets/images/hero--large-i.jpg 1920w, assets/images/hero--large-hi-dpi.jpg 3840w" media="(min-width: 1380px)">
-      <source srcset="assets/images/hero--medium-i.jpg 1380w, assets/images/hero--medium-hi-dpi.jpg 2760w" media="(min-width: 990px)">
-      <source srcset="assets/images/hero--small-i.jpg 990w, assets/images/hero--small-hi-dpi.jpg 1980w" media="(min-width: 640px)">
+      <source srcset="assets/images/hero--large.jpg 1920w, assets/images/hero--large-hi-dpi.jpg 3840w" media="(min-width: 1380px)">
+      <source srcset="assets/images/hero--medium.jpg 1380w, assets/images/hero--medium-hi-dpi.jpg 2760w" media="(min-width: 990px)">
+      <source srcset="assets/images/hero--small.jpg 990w, assets/images/hero--small-hi-dpi.jpg 1980w" media="(min-width: 640px)">
       <!-- base image for most tiny screeens-->
       <img srcset="assets/images/hero--smaller.jpg 640w, assets/images/hero--smaller-hi-dpi.jpg 1280w" alt="Costal view of ocean and mountains" class="large-hero__image">
     </picture>
@@ -59,20 +59,38 @@
       <h2 class="headline headline--centered headline--light headline--b-margin-small">The first trip we planned <strong>was our own.</strong></h2>
       <h3 class="headline headline--centered headline--orange headline--small headline--narrow headline--light headline--b-margin-large">Ever since, we&rsquo;ve been working to make travel <strong>better for everyone.</strong></h3>
       <!-- Center and narrow the first-trip.jpg -->
-      <div class="wrapper wrapper-medium">
-        <img src="assets/images/first-trip.jpg" alt="Couple walking down a street.">
+      <div class="wrapper wrapper--medium wrapper--b-margin">
+        <!-- Let's make image size responsive-->
+        <!-- <picture> element is not required, because images are cropped the same way -->
+        <!-- shold adjust image resolution only -->
+        <!-- 100vw stands for 100% Vewport Width -->
+        <img sizes="(min-width: 976px) 976px, 100vw"
+              srcset="assets/images/first-trip-low-res.jpg 565w, assets/images/first-trip.jpg 976w, assets/images/first-trip-hi-dpi.jpg 1952w" alt="Couple walking down a street.">
       </div> <!-- class="wrapper" -->
       <div class="row row--gutters">  <!-- Reusable column layout row -->
         <!-- Two columns  in the row: Image and text -->
         <!-- Assume we have 12 columns grid -->
-        <div class="row__medium-4" >  <!-- Column 1 takes 4 out of 12 vertical grid lines -->
-          <img src="assets/images/our-start.jpg" alt="Our founder, Jane Doe">
+        <div class="row__medium-4 row__medium-4--larger row__b-margin-until-medium">  <!-- Column 1 takes 4 out of 12 vertical grid lines -->
+          <!-- Adjust (landscape/portrait/tall) pictre of a founder to screen sizes -->
+          <picture>
+            <!-- attribute sizes="404px" informs browser that this particular image will be never wider than 404px out of 1020px -->
+            <!-- therefore browser should NOT use 808px hi-dpi image for min-width: 1020px  -->
+            <source sizes="404px" srcset="assets/images/our-start.jpg 404w, assets/images/our-start-hi-dpi.jpg 808w" media="(min-width: 1020px)">
+            <source sizes="320px" srcset="assets/images/our-start-portrait-i.jpg 382w,  assets/images/our-start-portrait-hi-dpi-i.jpg 764w" media="(min-width: 800px)">
+            <!-- Default for tiny screens, and one column layout -->
+            <img srcset="assets/images/our-start-landscape.jpg 800w, assets/images/our-start-landscape-hi-dpi.jpg 1600w" alt="Our founder, Jane Doe">
+          </picture>
         </div> <!-- Column 1 -->
-        <div class="row__medium-8"> <!-- Column 2 takes 8 out of 12 grid lines -->
-          <h2 class="headline">Here&rsquo;s how we got started&hellip;</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <a href="#">quis nostrud exercitation</a> ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Duis aute irure dolor in <strong>reprehenderit in</strong> voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum velit esse cillum <strong>dolore eu fugiat.</strong></p>
+        <div class="row__medium-8 row__medium-8--smaller"> <!-- Column 2 takes 8 out of 12 grid lines -->
+          <!-- Deviate from BEM methodology and wrap headline and the paragraphs to new div -->
+          <!-- In oredr to keep column layout and css intact-->
+          <div class="generic-content-container">
+            <!-- "headline--no-t-margin"  To adjust headline wih upper side of a picture -->
+            <h2 class="headline headline--no-t-margin">Here&rsquo;s how we got started&hellip;</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <a href="#">quis nostrud exercitation</a> ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Duis aute irure dolor in <strong>reprehenderit in</strong> voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum velit esse cillum <strong>dolore eu fugiat.</strong></p>
+          </div> <!-- generic-content-container -->
         </div> <!-- column 2 -->
         <div class="clear-me"></div> <!-- Clear the floats, the row have been completed -->
       </div> <!-- row -->

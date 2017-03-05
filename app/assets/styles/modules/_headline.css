@@ -43,4 +43,7 @@
     margin-bottom: 1.6em; /* em - relative to the element itself */
                           /* rem - relative to default global settings */
   }
+  &--no-t-margin {  /* remove top margin modifier */
+      margin-top: 0;
+  }
 }

@@ -25,18 +25,37 @@
        browsers defaults base/_global.css */
 
   }
+  /* for tiny and small size screns, add bottom margin */
+  &__b-margin-until-medium {
+    margin-bottom: 1rem;
+  }
 
   @mixin atMedium {
+    /* starting medium size screens,
+            reset margin-bottom to 0 */
+    &__b-margin-until-medium {
+      margin-bottom: 0;
+    }
      /* use two columns layout on medium or larger screens */
       &__medium-4 {
         float: left;
         width: 33.33%; /* 4/12 = 33.33% */
       }
 
+      &__medium-4--larger {
+        width: 37%; /* 4/12 = 33.33% */
+      }
+
+
       &__medium-8 {
         float: left;
         width: 66.66%; /* 8/12 = 66.66% */
       }
+
+      &__medium-8--smaller {
+        width: 63%; /* 8/12 = 66.66% */
+      }
+
 
 
   }
