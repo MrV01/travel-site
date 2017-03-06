@@ -696,7 +696,7 @@ a {
   }
 }
 /* Our features --> feature-item */
-/* Our features --> featur_item */
+/* Section: Our features, pattern: feature-item */
 .feature-item {
   position: relative;
   padding-bottom: 2.5rem;
