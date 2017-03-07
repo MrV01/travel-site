@@ -4,34 +4,50 @@
   /* better way to clear floats is ::after pseudo selector */
   /* the has been moved to base/_mixins "clearfix" for reusability sake */
   @mixin clearfix;
-  /*  &::after {
+  /*  One of the possible implementations:
+  &::after {
     content: "";
     clear:both;
     display: table;
   }
   */
+  /* background-color: yellow; -- for debugging purposes  */
 
-   /* background-color: yellow; -- for debugging purposes  */
+    &--t-padding { /* Top padding of the row */
+      padding-top: 80px ; /* to compensate margin: -80px  */
+    }
 
+
+   /* --gutters are empty space between columns */
    &--gutters {
-     margin-right: -65px; /* to get rid of the last column right margin  */
+     margin-right: -65px;
+     /* to get rid of the last column right padding  */
    }
 
    &--gutters-large {
      margin-right: -100px;
    }
 
-  &--gutters > div { /* add padding to direct childs <div>s */
+   &--gutters-small {
+     margin-right: -45px;
+   }
+
+  &--gutters > div { /* add padding to direct childs (<div>) */
     padding-right: 65px;
     /* Browser will not add padding to the total width of row */
     /* In recent years box-sizing: border-box CSS property  */
-    /* Is added into global setting for each element to overwrite
-       browsers defaults base/_global.css */
+    /* It is added into global setting for each element to overwrite
+       browsers defaults ( missing padding in the width calculations )
+       See base/_global.css */
 
   }
 
   &--gutters-large > div {
       padding-right: 100px;
+  }
+
+  &--gutters-small > div {
+    padding-right: 45px;
   }
 
   /* for tiny and small size screns, add bottom margin */
@@ -68,11 +84,20 @@
       &__medium-8--smaller {
         width: 63%; /* 8/12 = 66.66% */
       }
-
-
-
   }
 
+  /* Begin Equal Height Rules ( Testimonials section, etc) */
+
+  &--equal-height-at-medium {
+    @mixin atMedium {
+      display: flex;  /* Using flex box CSS featue */
+    }
+    /* Direct descendants <div> ( Columns in this particular case ) */
+    & > div {
+      float: none;
+      display: flex;
+    }
+  }
 }
 
 /* <div class="clear-me">  MUST come after all the floating siblings */

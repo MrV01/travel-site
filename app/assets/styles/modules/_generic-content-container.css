@@ -1,4 +1,5 @@
-
+/* Generic Styling for paragraphs text and links (<a>) in it  */
+/* Used in the parent(s) of the <p>, etc elements */
 .generic-content-container {
   /* background-color: yellow; */
   p {

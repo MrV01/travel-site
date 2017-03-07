@@ -20,5 +20,7 @@
 @import "modules/_generic-content-container";
 /* Section title "our features" */
 @import "modules/_section-title";
-/* Our features --> feature-item */
+/* Section Our features --> feature-item */
 @import "modules/_feature-item";
+/* Section Testimonials  */
+@import "modules/_testimonial";

@@ -501,6 +501,18 @@ a {
 .wrapper--medium {/* narrow then 1200px default */
   max-width: 976px;
 }
+/* no padding for smaller screens */
+.wrapper--no-padding-until-medium {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* restore padding at medium or larger */
+@media ( min-width: 800px) {
+  .wrapper--no-padding-until-medium {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
 /* wrapper nested with another wrapper shold not have horizontal padding */
 .wrapper .wrapper {
   padding-left: 0;
@@ -527,9 +539,27 @@ a {
     padding: 4.5rem 0;/* padding top, bottom:4.5rem left,right: 0 */
   }
 }
+.page-section--no-b-padding-until-medium {
+  padding-bottom: 0;
+}
+@media ( min-width: 800px) {
+  .page-section--no-b-padding-until-medium {
+    padding-bottom: 4.5rem;
+  }
+}
 .page-section--blue {
   background-color: #2f5572;
   color: #FFF;
+}
+.page-section--testimonials {/* base settings for smaller screens */
+  background-color: #e0e6ef;
+}
+/* nice background color */
+@media ( min-width: 800px) {
+  .page-section--testimonials {
+    background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+    background-size: cover;
+  }
 }
 /* Import headline block file */
 /* Headline block */
@@ -590,10 +620,15 @@ a {
   display: table;
 }
 /* background-color: yellow; -- for debugging purposes  */
-.row--gutters {
-  margin-right: -65px;/* to get rid of the last column right margin  */
+.row--t-padding {/* Top padding of the row */
+  padding-top: 80px ;/* to compensate margin: -80px  */
 }
-/*  &::after {
+/* --gutters are empty space between columns */
+.row--gutters {
+  margin-right: -65px;/* to get rid of the last column right padding  */
+}
+/*  One of the possible implementations:
+  &::after {
     content: "";
     clear:both;
     display: table;
@@ -603,12 +638,19 @@ a {
   margin-right: -100px;
 }
 /* better way to clear floats is ::after pseudo selector */
-.row--gutters > div {/* add padding to direct childs <div>s */
-  padding-right: 65px;/* Browser will not add padding to the total width of row *//* In recent years box-sizing: border-box CSS property  *//* Is added into global setting for each element to overwrite
-       browsers defaults base/_global.css */
+.row--gutters-small {
+  margin-right: -45px;
+}
+.row--gutters > div {/* add padding to direct childs (<div>) */
+  padding-right: 65px;/* Browser will not add padding to the total width of row *//* In recent years box-sizing: border-box CSS property  *//* It is added into global setting for each element to overwrite
+       browsers defaults ( missing padding in the width calculations )
+       See base/_global.css */
 }
 .row--gutters-large > div {
   padding-right: 100px;
+}
+.row--gutters-small > div {
+  padding-right: 45px;
 }
 /* for tiny and small size screns, add bottom margin */
 .row__b-margin-until-medium {
@@ -640,6 +682,21 @@ a {
     width: 63%;/* 8/12 = 66.66% */
   }
 }
+/* Begin Equal Height Rules ( Testimonials section, etc) */
+@media ( min-width: 800px) {
+  .row--equal-height-at-medium {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;/* Using flex box CSS featue */
+  }
+}
+/* Direct descendants <div> ( Columns in this particular case ) */
+.row--equal-height-at-medium > div {
+  float: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 /* <div class="clear-me">  MUST come after all the floating siblings */
 /* Main parent <div class="row" will know how tall he is */
 /* Is not recommended because the empty div element created in the HTML
@@ -649,6 +706,8 @@ a {
 }
 */
 /* Generic content container. Temp deviation from BEM */
+/* Generic Styling for paragraphs text and links (<a>) in it  */
+/* Used in the parent(s) of the <p>, etc elements */
 /* background-color: yellow; */
 .generic-content-container p {
   font-weight: 300;
@@ -681,6 +740,9 @@ a {
 .section-title strong {
   font-weight: 500;
 }
+.section-title--blue {
+  color: #2f5572;
+}
 .section-title__icon {
   display:block;
   margin-left: auto;
@@ -689,13 +751,15 @@ a {
 }
 @media ( min-width: 530px) {
   .section-title__icon {
+    position: relative;
+    top: 8px;
     margin-right: 0.5rem;
     margin-left: 0;
     margin-bottom: 0;
     display: inline-block;
   }
 }
-/* Our features --> feature-item */
+/* Section Our features --> feature-item */
 /* Section: Our features, pattern: feature-item */
 .feature-item {
   position: relative;
@@ -729,4 +793,52 @@ a {
     margin-top: 1em;
     font-size: 1.875rem;
   }
+}
+/* Section Testimonials  */
+/* Section: testimonial */
+.testimonial {
+  /* color: red; */
+  /* base line style for smaller screens */
+  background-color: rgba(255, 255, 255, 0.8); /* 0.8 * transparent white */
+  padding: 0 18px 1px 18px;
+  margin-bottom: 98px;
+}
+/* cointer margin: -80px; */
+@media ( min-width: 800px) {
+  .testimonial {/* Some padding to the edges
+      Bottom margin of the last paragraph creates some space in the bottotm,
+      However when container does not have any bottom padding,
+      the space "leaks out of the container".
+      1px bottom padding of the container element something to push up against :-( */
+    margin-bottom: 0;
+    padding: 0 1.8125rem 1px 1.8125rem;
+  }
+}
+.testimonial--last {
+  margin-bottom: 0;
+}
+.testimonial__photo {/* modifier for a div element-container, which surrounds the photo */
+  border-radius: 80px;/* pertruding out by default, and invisible */
+  overflow: hidden;/* whether to clip content or add scrollbars *//* visible - default, hidden - content clipped *//* now set width and hight of <div> same as the picture image */
+  width: 160px;
+  height: 160px;/* Illusion of circle photo trim created, when border-radius is 1/2 of image side *//* centers image inside the div and clip the picture corners ( overflow: hidden ) */
+  margin: 0 auto -80px auto;/* letting know that 80px of photo is out of container, so line UP *//* top half of the photo must violate container border,
+      use position relative */
+  position: relative;
+  top: -80px;/* Photo is up 80px, and out of container */
+  border: 6px solid rgba(255, 255, 255, 0.8);/* border around photo, in fact around the <div> container  */
+}
+.testimonial__title {
+  color: #2f5572;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+}
+.testimonial__subtitle {
+  color: #ffb914;
+  text-align: center;
+  font-weight: 400;
+  font-size: 0.937rem;
+  margin: 0.25rem 0 1rem 0;
 }
