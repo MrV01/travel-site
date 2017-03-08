@@ -12,13 +12,25 @@
       max-width: 976px;
     }
 
-    /* no padding for smaller screens */
+    /* no padding for small screens */
     &--no-padding-until-medium {
       padding-left: 0;
       padding-right: 0;
 
       /* restore padding at medium or larger */
       @mixin atMedium {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+    }
+
+    /* no padding for small and medium screens */
+    &--no-b-padding-until-large {
+      padding-left: 0;
+      padding-right: 0;
+
+      /* restore padding at large */
+      @mixin atLarge {
         padding-left: 18px;
         padding-right: 18px;
       }

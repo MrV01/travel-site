@@ -6,7 +6,7 @@
   padding: 0 18px 1px 18px;
   margin-bottom: 98px;   /* cointer margin: -80px; */
 
-  @mixin atMedium {
+  @mixin atLarge {
     /* Some padding to the edges
       Bottom margin of the last paragraph creates some space in the bottotm,
       However when container does not have any bottom padding,
@@ -17,7 +17,7 @@
 
   }
   &--last {
-    margin-bottom: 0; 
+    margin-bottom: 0;
   }
   &__photo {  /* modifier for a div element-container, which surrounds the photo */
     border-radius: 80px; /* pertruding out by default, and invisible */

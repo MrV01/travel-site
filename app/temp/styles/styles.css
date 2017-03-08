@@ -419,7 +419,7 @@ a {
   font-weight: 300;
   color: #2f5572;
   margin:0;
-  font-size: 2.4rem;
+  font-size: 2.4rem;/* Large sceens ~ 1200px */
 }
 /* Small screens ~ 530px */
 @media ( min-width: 530px) {
@@ -433,8 +433,9 @@ a {
     font-size: 4.8rem;
   }
 }
-/* Large sceens ~ 1200px */
-@media ( min-width: 1200px) {
+/* lowr bracket reduced down from 1200
+    because of 3 column layout in "_testimonials" section */
+@media ( min-width: 1010px) {
   .large-hero__title {
     font-size: 4.8rem;
   }
@@ -501,7 +502,7 @@ a {
 .wrapper--medium {/* narrow then 1200px default */
   max-width: 976px;
 }
-/* no padding for smaller screens */
+/* no padding for small screens */
 .wrapper--no-padding-until-medium {
   padding-left: 0;
   padding-right: 0;
@@ -509,6 +510,19 @@ a {
 /* restore padding at medium or larger */
 @media ( min-width: 800px) {
   .wrapper--no-padding-until-medium {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+/* no padding for small and medium screens */
+.wrapper--no-b-padding-until-large {
+  padding-left: 0;
+  padding-right: 0;/* restore padding at large */
+}
+/* lowr bracket reduced down from 1200
+    because of 3 column layout in "_testimonials" section */
+@media ( min-width: 1010px) {
+  .wrapper--no-b-padding-until-large {
     padding-left: 18px;
     padding-right: 18px;
   }
@@ -547,15 +561,26 @@ a {
     padding-bottom: 4.5rem;
   }
 }
+.page-section--no-b-padding-until-large {
+  padding-bottom: 0;
+}
+/* lowr bracket reduced down from 1200
+    because of 3 column layout in "_testimonials" section */
+@media ( min-width: 1010px) {
+  .page-section--no-b-padding-until-large {
+    padding-bottom: 4.5rem;
+  }
+}
 .page-section--blue {
   background-color: #2f5572;
   color: #FFF;
 }
 .page-section--testimonials {/* base settings for smaller screens */
-  background-color: #e0e6ef;
+  background-color: #e0e6ef;/* nice background color */
 }
-/* nice background color */
-@media ( min-width: 800px) {
+/* lowr bracket reduced down from 1200
+    because of 3 column layout in "_testimonials" section */
+@media ( min-width: 1010px) {
   .page-section--testimonials {
     background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
     background-size: cover;
@@ -682,6 +707,34 @@ a {
     width: 63%;/* 8/12 = 66.66% */
   }
 }
+/* lowr bracket reduced down from 1200
+    because of 3 column layout in "_testimonials" section */
+@media ( min-width: 1010px) {
+  .row {/* starting medium size screens,
+            reset margin-bottom to 0 *//* use two columns layout on medium or larger screens */
+  }
+  .row__b-margin-until-large {
+    margin-bottom: 0;
+  }
+  .row__large-4 {
+    float: left;
+    width: 33.33%;/* 4/12 = 33.33% */
+  }
+  .row__large-4--larger {
+    width: 37%;/* 4/12 = 33.33% */
+  }
+  .row__large-6 {
+    float: left;
+    width: 50%;/* 6/12 = 50% */
+  }
+  .row__large-8 {
+    float: left;
+    width: 66.66%;/* 8/12 = 66.66% */
+  }
+  .row__large-8--smaller {
+    width: 63%;/* 8/12 = 66.66% */
+  }
+}
 /* Begin Equal Height Rules ( Testimonials section, etc) */
 @media ( min-width: 800px) {
   .row--equal-height-at-medium {
@@ -692,6 +745,22 @@ a {
 }
 /* Direct descendants <div> ( Columns in this particular case ) */
 .row--equal-height-at-medium > div {
+  float: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/* lowr bracket reduced down from 1200
+    because of 3 column layout in "_testimonials" section */
+@media ( min-width: 1010px) {
+  .row--equal-height-at-large {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;/* Using flex box CSS featue */
+  }
+}
+/* Direct descendants <div> ( Columns in this particular case ) */
+.row--equal-height-at-large > div {
   float: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -803,8 +872,9 @@ a {
   padding: 0 18px 1px 18px;
   margin-bottom: 98px;
 }
-/* cointer margin: -80px; */
-@media ( min-width: 800px) {
+/* lowr bracket reduced down from 1200
+    because of 3 column layout in "_testimonials" section */
+@media ( min-width: 1010px) {
   .testimonial {/* Some padding to the edges
       Bottom margin of the last paragraph creates some space in the bottotm,
       However when container does not have any bottom padding,
@@ -814,6 +884,7 @@ a {
     padding: 0 1.8125rem 1px 1.8125rem;
   }
 }
+/* cointer margin: -80px; */
 .testimonial--last {
   margin-bottom: 0;
 }

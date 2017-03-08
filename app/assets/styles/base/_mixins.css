@@ -14,7 +14,9 @@
 }
 
 @define-mixin atLarge {
-  @media ( min-width: 1200px) {
+  /* lowr bracket reduced down from 1200
+    because of 3 column layout in "_testimonials" section */
+  @media ( min-width: 1010px) {
     @mixin-content;
   }
 }
