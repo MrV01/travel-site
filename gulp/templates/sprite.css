@@ -1,0 +1,21 @@
+/* Sprites Template file  */
+/*  Moustashe template  */
+/*  {{{sprite}}}  - sprite is variable
+    where gulp-svg-sprite keeps automatically
+    generated file name,  three curvy braces
+    prevents special symbols from  escaping -
+    keeps them (forward slash, etc) as it is */
+  /* The variables base, sprite, wight.outer, position.relative.xy, etc
+    are described in https://github.com/jkphl/gulp-svg-sprite
+    documentation: https://github.com/jkphl/svg-sprite#configuration-basics */
+
+/* Generate list of classes using BEM naming convention */
+{{#shapes}}
+  /* {{base}} icon CSS map in the sprite file */
+  .icon--{{base}} {
+    width: {{width.outer}}px;
+    height: {{height.outer}}px;
+    background-image: url('/temp/sprite/css/{{{sprite}}}');
+    background-position: {{position.relative.xy}} ;
+  }
+{{/shapes}}
