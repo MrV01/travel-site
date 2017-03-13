@@ -1002,3 +1002,25 @@ a {
     height: 42px;
     background-position: 36.69752421959096% 45.792307692307695% ;
   }
+/* Site footer */
+/* Site footer CSS file */
+.site-footer {
+  background-color: #2f5572;
+  color: #FFF; /* white */
+  padding: .5rem 0;  /* adjust vertical padding */
+  text-align: center;
+  font-weight: 200;
+
+}
+.site-footer__text {
+  display: block;/* line break *//* for small screens buttton is on next line */
+  margin-bottom: 1rem;
+}
+/* at larger than medium sized screens use "design file", side by side */
+@media ( min-width: 800px) {
+  .site-footer__text {
+    display: inline;
+    margin-bottom: 0;
+    margin-right: 1.4rem;
+  }
+} 
