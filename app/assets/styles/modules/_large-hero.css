@@ -12,12 +12,18 @@
   }
 
   &__text-content {
+    padding-top: 88px; /* give some space to nav bar + logo in _side-header.css
+                (padding-top: 88px)  for smaller than medium screens where Logo is limiting factor*/
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 0;
     width: 100%;
     text-align: center;
+
+    @mixin atMedium { /* padding for padding-top + logo  */
+      padding-top: 60px;
+    }
   }
 
   /* Example of mobile first pattern */

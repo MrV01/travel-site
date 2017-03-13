@@ -27,4 +27,8 @@
 /* Sprite file  AUTO generated import */
 @import "modules/_sprite";
 /* Site footer */
-@import "modules/_site-footer"; 
+@import "modules/_site-footer";
+/* Site header */
+@import "modules/_site-header";
+/* nav Primary navigation style */
+@import "modules/_primary-nav"; 

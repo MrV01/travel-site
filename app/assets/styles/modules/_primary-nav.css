@@ -1,0 +1,27 @@
+.primary-nav {
+  /* background-color: #efefef; */
+  &--pull-right {
+    float: right;
+  }
+  /* any <ul> within primary-nav */
+  ul {
+    margin: 0;
+    padding: 0;
+    @mixin clearfix;
+  }
+  /* any <li> within primary-nav */
+  li {
+    list-style: none;
+    float: left;
+    padding-right: 20px; /* from the design file */
+
+  }
+  /* any <a> within primary-nav */
+  a {
+    color: #FFF;
+    font-weight: 300;
+    text-decoration: none;
+    display:block; /* each a-elem is a block (padding, margine, etc are applicable)  */ 
+    padding: 12px 0;  /* center vertically in the blue line  */
+  }
+}

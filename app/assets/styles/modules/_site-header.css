@@ -1,0 +1,58 @@
+/* Site Header file */
+.site-header {
+  padding:10px 0;  /* padding 10 px from design file */
+  position: absolute; /* take off from normal flow */
+  width: 100%;  /* use all availiable width */
+  z-index: 2; /* (2 > nothing ) put on top of large-herow section */
+
+  @mixin atMedium { /* Nav bar is for medium and large screens */
+    /* !!! Where postcss plugin postcss-hexrgba will transform #ffffff to rgba() format */
+    background-color: rgba($mainBlue,.3); /* $mainBlue = #2f5572 */
+  }
+
+  &__btn-container {
+    float: right;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 0 ;  /* compansate for padding in class="site-header" */
+
+    left: 50%; /* logo to the right half of the screen */
+    transform: translateX(-50%) scale(.8); /* then move left 50%
+                  of its own width and scale down to 80% */
+    transform-origin: 50% 0%; /* by default, horizontal 50% and vertical 50%
+                  Then we change to 0% vertical origin point, and logo moves up  */
+
+    background-color: $mainBlue;
+    padding: 25px 36px;
+
+    @mixin atMedium {  /* position logo for larger screens */
+      left: auto; /* undo left: of the small screens*/
+      transform: translateX(0); /* undo transform: for smaller screens*/
+    }
+  }
+  &__logo__graphic {
+    text-indent: -9999px; /* hide text without hiding element itself */
+  }
+
+  &__menu-icon { /* mobile icon - sandwich */
+    width: 20px;
+    height: 20px;
+    background-color: #FFF;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    @mixin atMedium { /* do not show on larger screens */
+      display: none;
+    }
+  }
+
+  &__menu-content {
+    display: none; /*  invisible for small screens */
+
+    @mixin atMedium { /* Nav menue items are visible starting from medium screens*/
+      display: block;
+    }
+  }
+}
