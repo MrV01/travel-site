@@ -68,23 +68,48 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-// Person JS module
+"use strict";
 
-// Constructor
-function Person(fullName, favoriteColor) {
-  this.name = fullName;
-  this.favoriteColor = favoriteColor;
-  this.greet = function() {
-    console.log("Hello, my name is " + this.name +
-    " my favorite color is " + this.favoriteColor);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+// Person JS module. Now try to use some ES6 to test babel.
+
+var Person = function () {
+  function Person(fullName, favoriteColor) {
+    _classCallCheck(this, Person);
+
+    this.name = fullName;
+    this.favoriteColor = favoriteColor;
   }
-}
+
+  _createClass(Person, [{
+    key: "greet",
+    value: function greet() {
+      console.log("Hi there, my name is " + this.name + " my favorite color is " + this.favoriteColor);
+    }
+  }]);
+
+  return Person;
+}();
+// ES6 way to export from a module
+
+
+exports.default = Person;
 
 // Exports of the module is just one constructor
 // Where module is parent of exports
-module.exports = Person;
+// Node JS way to export from a module
+
+// module.exports = Person;
 // Exports complex object instead of just a constructor function
 /* module.exports = {
    name: "I am a property called name",
@@ -92,7 +117,6 @@ module.exports = Person;
       alert("I am alert function");
    }
 } */
-
 
 /***/ }),
 /* 1 */
@@ -10349,6 +10373,23 @@ return jQuery;
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _Person2 = __webpack_require__(0);
+
+var _Person3 = _interopRequireDefault(_Person2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 // first JavaScript experience
 //  How to use installed  Jquery node module
 //  from the development environment instead of
@@ -10364,7 +10405,29 @@ var $ = __webpack_require__(1);
 // webpack tool to make a neat package, which will run in
 // browser environment(s)
 //
-var Person = __webpack_require__(0);
+// ES5 way to import a module
+// var Person = require('./modules/Person');
+//ES6 way to import a module
+
+// Play with ES6 features.
+var Adult = function (_Person) {
+   _inherits(Adult, _Person);
+
+   function Adult() {
+      _classCallCheck(this, Adult);
+
+      return _possibleConstructorReturn(this, (Adult.__proto__ || Object.getPrototypeOf(Adult)).apply(this, arguments));
+   }
+
+   _createClass(Adult, [{
+      key: 'payTaxes',
+      value: function payTaxes() {
+         console.log(this.name + " now owes $0 in taxes");
+      }
+   }]);
+
+   return Adult;
+}(_Person3.default);
 
 // When JQuery is included in the bundle:
 /*  Version: webpack 2.2.1
@@ -10376,17 +10439,20 @@ App.js  272 kB       0  [emitted]  [big]  main
    [2] ./app/assets/scripts/App.js 831 bytes {0} [built]
 */
 // Example of JQuery use: to remove h1 elements.
-// $("h1").remove();
 
-var john = new Person("John Doe", "blue");
+alert(" Test ABC 321. This is a test of our webpack automation");
+
+$("h1").remove();
+
+var john = new _Person3.default("John Doe", "blue");
 john.greet();
 
-var jane = new Person("Jane Doe", "red");
+var jane = new Adult("Jane Doe", "red");
 jane.greet();
+jane.payTaxes(); // function from class Adult extends Person
 
-var johnnyFife = new Person("Johnny Five", "green");
+var johnnyFife = new _Person3.default("Johnny Five", "Orange");
 johnnyFife.greet();
-
 
 /***/ })
 /******/ ]);

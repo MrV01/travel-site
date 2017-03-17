@@ -13,7 +13,17 @@ var $ = require('jquery');
 // webpack tool to make a neat package, which will run in
 // browser environment(s)
 //
-var Person = require('./modules/Person');
+// ES5 way to import a module
+// var Person = require('./modules/Person');
+//ES6 way to import a module
+import Person from './modules/Person';
+
+// Play with ES6 features.
+class Adult extends Person {
+   payTaxes() {
+     console.log(this.name + " now owes $0 in taxes");
+   }
+}
 
 // When JQuery is included in the bundle:
 /*  Version: webpack 2.2.1
@@ -25,13 +35,17 @@ App.js  272 kB       0  [emitted]  [big]  main
    [2] ./app/assets/scripts/App.js 831 bytes {0} [built]
 */
 // Example of JQuery use: to remove h1 elements.
-// $("h1").remove();
+
+alert(" Test ABC 321. This is a test of our webpack automation");
+
+$("h1").remove();
 
 var john = new Person("John Doe", "blue");
 john.greet();
 
-var jane = new Person("Jane Doe", "red");
+var jane = new Adult("Jane Doe", "red");
 jane.greet();
+jane.payTaxes();  // function from class Adult extends Person
 
-var johnnyFife = new Person("Johnny Five", "green");
+var johnnyFife = new Person("Johnny Five", "Orange");
 johnnyFife.greet();

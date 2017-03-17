@@ -25,6 +25,10 @@ gulp.task('watch', function() {
        // gulp.start('styles');
        gulp.start('cssInject');
     });
+    // trigger task scripts when script file modified
+    watch('./app/assets/scripts/**/*.js', function() {
+      gulp.start('scriptsRefresh'); // webpack then broserfy
+    });
 });
 
 // Browser-sync injection of CSS upon change of tmp/styles/styles.css
@@ -32,4 +36,8 @@ gulp.task('cssInject', ['styles'] , function(){
   // Inject new CSS content "on the fly"
   return gulp.src('./app/temp/styles/styles.css')
       .pipe(browserSync.stream());
+});
+//  Wait for gulp.task('scripts', ) to completed, then reload browsers
+ gulp.task('scriptsRefresh',['scripts'], function() {
+  browserSync.reload();
 });
