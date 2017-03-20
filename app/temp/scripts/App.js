@@ -77,46 +77,74 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); // Programming in ES6 style
+
+var _jquery = __webpack_require__(1);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-// Person JS module. Now try to use some ES6 to test babel.
+// import Jquery because
+// "Jquery still worth its weight"
 
-var Person = function () {
-  function Person(fullName, favoriteColor) {
-    _classCallCheck(this, Person);
+var MobileMenu = function () {
+  function MobileMenu() {
+    _classCallCheck(this, MobileMenu);
 
-    this.name = fullName;
-    this.favoriteColor = favoriteColor;
+    // alert("testing from MobileMenu class"); // test message
+    // Please do not program like that, "Jquery spagetti" code.
+    // $(".site-header__menu-icon").click(function(){
+    // A - Selecting elemants from the DOM
+    // B - Event handling
+    // console.log("The top right colon was clicked!");
+    // C - define functionality.
+    // });   // According to professor, A,B,C steps scale rather bad.
+    // the "JQuery Spagetti" code became unmanageble rather fast.
+
+    // Right way to searate A, B, C into the shelfs:
+    // Browser DOM selectors initiated by JQuery selectors
+    this.menuIcon = (0, _jquery2.default)(".site-header__menu-icon");
+    this.menuContent = (0, _jquery2.default)(".site-header__menu-content");
+
+    // Below are not standard JS events, those are internal events of this object
+    this.events(); // run events of this object manually
   }
 
-  _createClass(Person, [{
-    key: "greet",
-    value: function greet() {
-      console.log("Hi there, my name is " + this.name + " my favorite color is " + this.favoriteColor);
+  // Event we are watching, they are defined by ourselves
+
+
+  _createClass(MobileMenu, [{
+    key: "events",
+    value: function events() {
+      this.menuIcon.click(this.toggleTheMenu);
+      // .bind() above is used 
+      console.log(this);
+    }
+
+    // Action on the event(s)
+
+  }, {
+    key: "toggleTheMenu",
+    value: function toggleTheMenu() {
+      // run the action "Toggle the menu content" (visible/unvisible)
+      // console.log("Hooray - the icon was clicked!"); // test message
+      // Attention "this" variable points to object, from which method was called
+      //  from! In this particular case: Jquery menuIcon object
+      console.log(this);
+      this.manuContent.toggleClass("site-header__menu-content--is-visible");
     }
   }]);
 
-  return Person;
+  return MobileMenu;
 }();
-// ES6 way to export from a module
+
+// ES6 style export:
 
 
-exports.default = Person;
-
-// Exports of the module is just one constructor
-// Where module is parent of exports
-// Node JS way to export from a module
-
-// module.exports = Person;
-// Exports complex object instead of just a constructor function
-/* module.exports = {
-   name: "I am a property called name",
-   functionality: function() {
-      alert("I am alert function");
-   }
-} */
+exports.default = MobileMenu;
 
 /***/ }),
 /* 1 */
@@ -10376,83 +10404,14 @@ return jQuery;
 "use strict";
 
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _MobileMenu = __webpack_require__(0);
 
-var _Person2 = __webpack_require__(0);
-
-var _Person3 = _interopRequireDefault(_Person2);
+var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// first JavaScript experience
-//  How to use installed  Jquery node module
-//  from the development environment instead of
-//  HTML file :
-//  1. Install node third party package to the project directory
-//     $ npm install jquery --save
-//  2. Require JQuery module in the script
-//  3. webpack will bundle JQuery automatically
-
-var $ = __webpack_require__(1);
-
-// Node based JS functions/modules can be bundled by
-// webpack tool to make a neat package, which will run in
-// browser environment(s)
-//
-// ES5 way to import a module
-// var Person = require('./modules/Person');
-//ES6 way to import a module
-
-// Play with ES6 features.
-var Adult = function (_Person) {
-   _inherits(Adult, _Person);
-
-   function Adult() {
-      _classCallCheck(this, Adult);
-
-      return _possibleConstructorReturn(this, (Adult.__proto__ || Object.getPrototypeOf(Adult)).apply(this, arguments));
-   }
-
-   _createClass(Adult, [{
-      key: 'payTaxes',
-      value: function payTaxes() {
-         console.log(this.name + " now owes $0 in taxes");
-      }
-   }]);
-
-   return Adult;
-}(_Person3.default);
-
-// When JQuery is included in the bundle:
-/*  Version: webpack 2.2.1
-Time: 525ms
- Asset    Size  Chunks                    Chunk Names
-App.js  272 kB       0  [emitted]  [big]  main
-   [0] ./app/assets/scripts/modules/Person.js 616 bytes {0} [built]
-!! [1] ./~/jquery/dist/jquery.js 268 kB {0} [built]
-   [2] ./app/assets/scripts/App.js 831 bytes {0} [built]
-*/
-// Example of JQuery use: to remove h1 elements.
-
-alert(" Test ABC 321. This is a test of our webpack automation");
-
-$("h1").remove();
-
-var john = new _Person3.default("John Doe", "blue");
-john.greet();
-
-var jane = new Adult("Jane Doe", "red");
-jane.greet();
-jane.payTaxes(); // function from class Adult extends Person
-
-var johnnyFife = new _Person3.default("Johnny Five", "Orange");
-johnnyFife.greet();
+var mobileMenu = new _MobileMenu2.default(); // Finish web site
+// Introduce mobile menu  JS in ES6 style module/class
 
 /***/ })
 /******/ ]);
