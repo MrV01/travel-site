@@ -1,7 +1,16 @@
 .primary-nav {
   /* background-color: #efefef; */
+  padding-top: 10px;
+
+  @mixin atMedium {
+      padding-top: 0;
+  }
+
   &--pull-right {
-    float: right;
+
+    @mixin atMedium { /* right float for medium to large screens*/
+      float: right;
+    }
   }
   /* any <ul> within primary-nav */
   ul {
@@ -9,19 +18,42 @@
     padding: 0;
     @mixin clearfix;
   }
+
   /* any <li> within primary-nav */
   li {
     list-style: none;
-    float: left;
-    padding-right: 20px; /* from the design file */
+    display: inline-block;
+    padding-right: 7px; /* to save space on smaller screens */
 
+    @mixin atMedium {
+      padding-right: 20px; /* from the design file */
+      float: left;
+      display: block;
+    }
   }
+  /* Save 7 to 20 px horizontal on smaller screens */
+  li:last-child {
+    padding-right: 0;
+    @mixin atMedium {
+      padding-right: 20px;
+    }
+  }
+
   /* any <a> within primary-nav */
   a {
     color: #FFF;
     font-weight: 300;
     text-decoration: none;
-    display:block; /* each a-elem is a block (padding, margine, etc are applicable)  */ 
-    padding: 12px 0;  /* center vertically in the blue line  */
+    display:block; /* each a-elem is a block (padding, margine, etc are applicable)  */
+    padding: 5px 8px;  /* center vertically in the blue line  */
+    font-size: .8rem;
+    background-color: rgba($mainBlue, .5);
+
+    @mixin atMedium {
+      font-size: 1rem;
+      padding: 12px 0;  /* center vertically in the blue line  */
+      background-color: transtparent;
+
+    }
   }
 }

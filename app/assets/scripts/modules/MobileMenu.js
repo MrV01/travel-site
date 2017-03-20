@@ -17,18 +17,22 @@ class MobileMenu {
 
     // Right way to searate A, B, C into the shelfs:
     // Browser DOM selectors initiated by JQuery selectors
+    this.siteHeader = $(".site-header");
     this.menuIcon = $(".site-header__menu-icon");
     this.menuContent = $(".site-header__menu-content");
 
-    // Below are not standard JS events, those are internal events of this object
+    // Function events() below are not standard JS events,
+    // those are internal events of this object
     this.events(); // run events of this object manually
   }
 
   // Event we are watching, they are defined by ourselves
   events() {
-    this.menuIcon.click(this.toggleTheMenu);
-    // .bind() above is used 
-    console.log(this);
+    this.menuIcon.click(this.toggleTheMenu.bind(this));
+    // ".bind()" above is used to replace "this" default ( menuIcon HTML element)
+    // in "toggleTheMenue" function call of "click" JQuery function  by
+    // "this" pointing on object of MobileMenu class.
+    // console.log(this);
   }
 
   // Action on the event(s)
@@ -36,9 +40,10 @@ class MobileMenu {
       // console.log("Hooray - the icon was clicked!"); // test message
       // Attention "this" variable points to object, from which method was called
       //  from! In this particular case: Jquery menuIcon object
-      console.log(this);
-      this.manuContent.toggleClass("site-header__menu-content--is-visible");
-
+      // console.log(this);
+      this.menuContent.toggleClass("site-header__menu-content--is-visible");
+      this.siteHeader.toggleClass("site-header--is-expanded");
+      this.menuIcon.toggleClass("site-header__menu-icon--close-x");
   }
 
 }

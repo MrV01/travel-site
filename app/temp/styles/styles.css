@@ -1037,16 +1037,25 @@ a {
   padding:10px 0;  /* padding 10 px from design file */
   position: absolute; /* take off from normal flow */
   width: 100%;  /* use all availiable width */
-  z-index: 2;
+  z-index: 2; /* (2 > nothing ) put on top of large-herow section */
+  -webkit-transition: background-color .3s ease-out;
+  transition: background-color .3s ease-out;
 }
-/* (2 > nothing ) put on top of large-herow section */
+/* site-header--is-expanded  (MobileMenu.js) */
+.site-header--is-expanded {
+  background-color: rgba(47,85,114, .55 );/* 55% opacity*/
+}
+/* transition for a smaller screens */
 @media ( min-width: 800px) {
   .site-header {/* Nav bar is for medium and large screens *//* !!! Where postcss plugin postcss-hexrgba will transform #ffffff to rgba() format */
     background-color: rgba(47,85,114,.3);/* $mainBlue = #2f5572 */
   }
 }
-.site-header__btn-container {
-  float: right;
+/* site-header__btn-container */
+@media ( min-width: 800px) {
+  .site-header__btn-container {/* float to right for medium to large screens */
+    float: right;
+  }
 }
 .site-header__logo {
   position: absolute;
@@ -1073,30 +1082,118 @@ a {
 }
 .site-header__menu-icon {/* mobile icon - sandwich */
   width: 20px;
-  height: 20px;
-  background-color: #FFF;
+  height: 19px;/* background-color: #FFF; // commented out to make it invisible */
   position: absolute;
+  z-index: 10;
   top: 10px;
   right: 10px;
 }
+/* Horiz bar: class= site-header__menu-icon__top ( MobileMenu.js ) */
+.site-header__menu-icon::before {
+  content: "" ;/* to make the pseudo element appear on screen */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 3px;
+  background-color: #FFF;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;/* rotation point in 50% 50% (middle point) by default */
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+}
+/* site-header__menu-icon__middle ( MobileMenu.js )*/
+.site-header__menu-icon__middle {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 20px;
+  height: 3px;
+  background-color: #FFF;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;/* transition all properties, baside opacity */
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;/* reason: middle bar is fading to the left */
+}
+/* site-header__menu-icon__bottom ( MobileMenu.js )*/
+.site-header__menu-icon::after {
+  content: "";/* appear on the sreen */
+  position: absolute;
+  bottom: 0;/* at the very bottom :-) */
+  left: 0;
+  width: 20px;
+  height: 3px;
+  background-color: #FFF;
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+}
+/* Sandwich menue icon Animating Hamburger */
 @media ( min-width: 800px) {
   .site-header__menu-icon {/* do not show on larger screens */
     display: none;
   }
 }
-.site-header__menu-content {
-  display: none;
+/* Create  X from the three bars "sandwich menu"  */
+.site-header__menu-icon--close-x::before {
+  -webkit-transform: rotate(45deg) scaleX(1.25);
+          transform: rotate(45deg) scaleX(1.25);
 }
-/*  invisible for small screens */
+.site-header__menu-icon--close-x .site-header__menu-icon__middle {
+  opacity: 0;/* still present, but invisible */
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+.site-header__menu-icon--close-x::after {
+  -webkit-transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+          transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+}
+.site-header__menu-content {/* Baseline for small screens:  */
+  opacity: 0;/*  invisible for small screens *//* repaced the display: none property */
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);/* zoom 120% */
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;/* transition of ALL properties, instead of "opacity" only */
+  position: relative;
+  z-index: -10;/* hide it from accidental clicking  */
+  padding-top: 90px;/* Shift down from logo image */
+  text-align: center;
+}
 @media ( min-width: 800px) {
   .site-header__menu-content {/* Nav menue items are visible starting from medium screens*/
-    display: block;
+    opacity: 1;/*  instead of display: block; */
+    -webkit-transform: scale(1);
+            transform: scale(1);/* zoom always 100%  */
+    z-index: 1;/* can click now */
+    padding-top: 0;/* Logo is on the left, no NAV bar shift required */
   }
 }
+/* site-header__menu-content--is-visible */
+.site-header__menu-content--is-visible {/*  NAV menue content is visible (MobileMenu.js) */
+  opacity: 1;/* replaced the display:block property  */
+  -webkit-transform: scale(1);
+          transform: scale(1);/* zoom back to 100% */
+  z-index: 1;/* now can click it */
+}
 /* nav Primary navigation style */
-/* background-color: #efefef; */
-.primary-nav--pull-right {
-  float: right;
+.primary-nav {
+  /* background-color: #efefef; */
+  padding-top: 10px;
+}
+@media ( min-width: 800px) {
+  .primary-nav {
+    padding-top: 0;
+  }
+}
+@media ( min-width: 800px) {
+  .primary-nav--pull-right {/* right float for medium to large screens*/
+    float: right;
+  }
 }
 /* any <ul> within primary-nav */
 .primary-nav ul {
@@ -1111,8 +1208,25 @@ a {
 /* any <li> within primary-nav */
 .primary-nav li {
   list-style: none;
-  float: left;
-  padding-right: 20px;/* from the design file */
+  display: inline-block;
+  padding-right: 7px;
+}
+/* to save space on smaller screens */
+@media ( min-width: 800px) {
+  .primary-nav li {
+    padding-right: 20px;/* from the design file */
+    float: left;
+    display: block;
+  }
+}
+/* Save 7 to 20 px horizontal on smaller screens */
+.primary-nav li:last-child {
+  padding-right: 0;
+}
+@media ( min-width: 800px) {
+  .primary-nav li:last-child {
+    padding-right: 20px;
+  }
 }
 /* any <a> within primary-nav */
 .primary-nav a {
@@ -1120,5 +1234,14 @@ a {
   font-weight: 300;
   text-decoration: none;
   display:block;/* each a-elem is a block (padding, margine, etc are applicable)  */
-  padding: 12px 0;/* center vertically in the blue line  */
+  padding: 5px 8px;/* center vertically in the blue line  */
+  font-size: .8rem;
+  background-color: rgba(47,85,114, .5);
+}
+@media ( min-width: 800px) {
+  .primary-nav a {
+    font-size: 1rem;
+    padding: 12px 0;/* center vertically in the blue line  */
+    background-color: transtparent;
+  }
 } 
