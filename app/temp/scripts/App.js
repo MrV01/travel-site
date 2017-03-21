@@ -10435,11 +10435,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 // 2. JS lib to deal with page scroll:
 //        npm install waypoints --save
 
+// attempt to reuse "fade out" effect on other items class="testimonial"
+// by adding .testimonial class to the list of items.
+// However what if we want slightly different fade-out effect.
+// In such a case we need second object RevealOnScroll and constructor
+// with parameters.
+
 var RevealOnScroll = function () {
-  function RevealOnScroll() {
+  function RevealOnScroll(els, offset) {
     _classCallCheck(this, RevealOnScroll);
 
-    this.itemsToReveal = (0, _jquery2.default)(".feature-item");
+    this.itemsToReveal = els;
+    this.offsetPercentage = offset;
+    // Attention! sequence does matter,
+    // because createWaypoints() is using this.offsetPercentage
     this.hideInitially();
     this.createWaypoints();
   }
@@ -10452,6 +10461,7 @@ var RevealOnScroll = function () {
   }, {
     key: 'createWaypoints',
     value: function createWaypoints() {
+      var that = this; // keep that pointing to the RevealOnScroll obj.
       this.itemsToReveal.each(function () {
         // alert("testing waypoints");
         var currentItem = this; // current DOM element, looping through .each()
@@ -10461,7 +10471,7 @@ var RevealOnScroll = function () {
             (0, _jquery2.default)(currentItem).addClass("reveal-item--is-visible");
           }, // Waypoint triggered when invisible item hits top of browser window
           // while scrolling
-          offset: "85%" // Offset from top of the window to trigger the Waypoint
+          offset: that.offsetPercentage // Offset from top of the window to trigger the Waypoint
         });
       });
     }
@@ -11250,13 +11260,26 @@ var _RevealOnScroll = __webpack_require__(2);
 
 var _RevealOnScroll2 = _interopRequireDefault(_RevealOnScroll);
 
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mobileMenu = new _MobileMenu2.default();
+
+// var revealOnScroll = new RevealOnScroll();
+// attempt to reuse "fade out" effect on other items class="testimonial"
+// by adding .testimonial class to the list of items.
+// However what if we want slightly different fade-out effect.
+// In such a case we need second object RevealOnScroll and constructor
+// with parameters.
 
 // Finish web site
 // Introduce mobile menu  JS in ES6 style module/class
 
-var mobileMenu = new _MobileMenu2.default();
-var revealOnScroll = new _RevealOnScroll2.default();
+var revealOnScrollFeatires = new _RevealOnScroll2.default((0, _jquery2.default)(".feature-item"), "85%");
+var revealOnScrollTestimonial = new _RevealOnScroll2.default((0, _jquery2.default)(".testimonial"), "60%");
 
 /***/ })
 /******/ ]);

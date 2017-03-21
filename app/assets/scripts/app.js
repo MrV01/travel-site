@@ -3,6 +3,16 @@
 
 import MobileMenu from './modules/MobileMenu';
 import RevealOnScroll from './modules/RevealOnScroll';
+import $ from 'jquery';
 
 var mobileMenu = new MobileMenu();
-var revealOnScroll = new RevealOnScroll();
+
+// var revealOnScroll = new RevealOnScroll();
+// attempt to reuse "fade out" effect on other items class="testimonial"
+// by adding .testimonial class to the list of items.
+// However what if we want slightly different fade-out effect.
+// In such a case we need second object RevealOnScroll and constructor
+// with parameters.
+
+var revealOnScrollFeatires = new RevealOnScroll($(".feature-item"), "85%");
+var revealOnScrollTestimonial = new RevealOnScroll($(".testimonial"), "60%");
