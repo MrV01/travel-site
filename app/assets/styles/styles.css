@@ -31,4 +31,6 @@
 /* Site header */
 @import "modules/_site-header";
 /* nav Primary navigation style */
-@import "modules/_primary-nav"; 
+@import "modules/_primary-nav";
+/* Reveal item new class="reveal-item" */
+@import "modules/_reveal-item";
