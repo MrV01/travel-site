@@ -34,3 +34,7 @@
 @import "modules/_primary-nav";
 /* Reveal item new class="reveal-item" */
 @import "modules/_reveal-item";
+/* Create Overlay, or Modal, or light box */
+@import "modules/_modal";
+/* Social Icons */
+@import "modules/_social-icons";

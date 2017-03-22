@@ -506,8 +506,11 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
-.wrapper--medium {/* narrow then 1200px default */
+.wrapper--medium {/*  medium */
   max-width: 976px;
+}
+.wrapper--narrow {/* narrow  */
+  max-width: 470px;
 }
 /* no padding for small screens */
 .wrapper--no-padding-until-medium {
@@ -818,6 +821,10 @@ a {
 }
 .section-title--blue {
   color: #2f5572;
+}
+.section-title--less-margin {
+  margin-bottom: 1.3rem;
+  margin-top: 0;
 }
 .section-title__icon {
   display:block;
@@ -1274,4 +1281,85 @@ a {
   opacity: 1;/* fully visible */
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+/* Create Overlay, or Modal, or light box */
+/* Modal, aka Overlay, aka Light box */
+.modal {
+  position: fixed;
+  z-index: 5; /* the highest z-index is on top. */
+  background-color: rgba(255, 255, 255, .94); /* white color #FFF */
+  /* occupy whole window  top,bott, etc = 0 */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;   /* make the overlay transparent */
+  visibility: hidden; /* make the overlay non - clickable */
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+
+}
+.modal--is-visible {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.modal__inner {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.modal__description {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.65;
+}
+.modal__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2rem;
+  -webkit-transform: scaleX(1.2);
+          transform: scaleX(1.2);
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;/* horizontal  vertical */
+  color: #2f5572;
+  cursor: pointer;
+}
+.modal__close:hover {
+  color: #d59541;
+}
+/* Social Icons */
+/* Social Icons */
+.social-icons {
+   text-align: center;
+}
+.social-icons__icon {/* new rule targets social-icons__icon element */
+  background-color: #d59541;
+  display: inline-block;
+  margin: 0 5px 5px 5px;/* up right bottom left */
+  width: 72px;
+  height: 72px;
+  position: relative;
+}
+/* Parents must be relative for absolute chilt */
+@media ( min-width: 530px) {
+  .social-icons__icon {
+    width: 72px;
+    margin: 0 5px;/* vertical horizontal */
+  }
+}
+.social-icons__icon .icon {/* block property helps icon image occupy space */
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);/* pull back left half of the width , pull back up half of the height  */
 }

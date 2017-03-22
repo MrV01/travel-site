@@ -8,8 +8,12 @@
   /* Content Centered by margins left,right : auto */
   margin-left: auto;
   margin-right: auto;
-    &--medium { /* narrow then 1200px default */
+    &--medium { /*  medium */
       max-width: 976px;
+    }
+
+    &--narrow { /* narrow  */
+      max-width: 470px;
     }
 
     /* no padding for small screens */
