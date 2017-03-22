@@ -1248,8 +1248,8 @@ a {
 /* Reveal item new class="reveal-item" */
 /* module/_reveal-item */
 .reveal-item {
-  opacity: 0;
-  -webkit-transition: all 1.5s ease-out;
+  opacity: 0; /* completely  invisible */ 
+  -webkit-transition: all 1.5s ease-out; 
   transition: all 1.5s ease-out;
   /* Fine tune a liitle */
   -webkit-transform: scale(1.15);
