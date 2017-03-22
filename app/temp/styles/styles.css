@@ -1256,6 +1256,9 @@ a {
     padding: 12px 0;/* center vertically in the blue line  */
     background-color: transtparent;
   }
+  .primary-nav a.is-current-link {
+    color: #fabb69;/* nice Orange color*/
+  }
 }
 /* Reveal item new class="reveal-item" */
 /* module/_reveal-item */
