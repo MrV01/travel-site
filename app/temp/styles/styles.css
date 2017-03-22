@@ -1047,8 +1047,12 @@ a {
 }
 /* transition for a smaller screens */
 @media ( min-width: 800px) {
-  .site-header {/* Nav bar is for medium and large screens *//* !!! Where postcss plugin postcss-hexrgba will transform #ffffff to rgba() format */
-    background-color: rgba(47,85,114,.3);/* $mainBlue = #2f5572 */
+  .site-header {/* Nav bar is for medium and large screens */
+    position: fixed;/* !!! Where postcss plugin postcss-hexrgba will transform #ffffff to rgba() format */
+    background-color: rgba(47,85,114,.3);/* $mainBlue = #2f5572 *//* site-header--dark  CSS class for "fixed header" feature */
+  }
+  .site-header--dark {
+    background-color: rgba(23,51,72,.85);/* darker blue color for fixed header */
   }
 }
 /* site-header__btn-container */
@@ -1064,6 +1068,10 @@ a {
   -webkit-transform: translateX(-50%) scale(.8);
           transform: translateX(-50%) scale(.8);/* then move left 50%
                   of its own width and scale down to 80% */
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;/* Transition animation for shrinking Logo in stiky-header */
   -webkit-transform-origin: 50% 0%;
           transform-origin: 50% 0%;/* by default, horizontal 50% and vertical 50%
                   Then we change to 0% vertical origin point, and logo moves up  */
@@ -1074,7 +1082,11 @@ a {
   .site-header__logo {/* position logo for larger screens */
     left: auto;/* undo left: of the small screens*/
     -webkit-transform: translateX(0);
-            transform: translateX(0);/* undo transform: for smaller screens*/
+            transform: translateX(0);/* undo transform: for smaller screens*//* Shrink Logo if the sticky header is scrolling dowm .i.e ".site-header--dark" class is present */
+  }
+  .site-header--dark .site-header__logo {
+    -webkit-transform: scale(.57);
+            transform: scale(.57);
   }
 }
 .site-header__logo__graphic {
@@ -1248,8 +1260,8 @@ a {
 /* Reveal item new class="reveal-item" */
 /* module/_reveal-item */
 .reveal-item {
-  opacity: 0;
-  -webkit-transition: all 1.5s ease-out;
+  opacity: 0; /* completely  invisible */ 
+  -webkit-transition: all 1.5s ease-out; 
   transition: all 1.5s ease-out;
   /* Fine tune a liitle */
   -webkit-transform: scale(1.15);

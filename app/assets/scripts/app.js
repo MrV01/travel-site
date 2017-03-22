@@ -5,6 +5,9 @@ import MobileMenu from './modules/MobileMenu';
 import RevealOnScroll from './modules/RevealOnScroll';
 import $ from 'jquery';
 
+// Sticky Header feature for Medium to larger screens
+import StickyHeader from './modules/StickyHeader.js';
+
 var mobileMenu = new MobileMenu();
 
 // var revealOnScroll = new RevealOnScroll();
@@ -16,3 +19,5 @@ var mobileMenu = new MobileMenu();
 
 var revealOnScrollFeatires = new RevealOnScroll($(".feature-item"), "85%");
 var revealOnScrollTestimonial = new RevealOnScroll($(".testimonial"), "60%");
+
+var stickyHeader = new StickyHeader();
