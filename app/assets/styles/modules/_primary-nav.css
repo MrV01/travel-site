@@ -54,6 +54,10 @@
       padding: 12px 0;  /* center vertically in the blue line  */
       background-color: transtparent;
 
+      &.is-current-link {
+        color: #fabb69;  /* nice Orange color*/ 
+      }
+
     }
   }
 }
