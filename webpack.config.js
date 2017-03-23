@@ -1,8 +1,11 @@
 module.exports = {
-  entry: "./app/assets/scripts/App.js",
+  entry: {  // Multi - entry points
+    App: "./app/assets/scripts/App.js",
+    Vendor: "./app/assets/scripts/Vendor.js"
+  },
   output: {
     path: "./app/temp/scripts",
-    filename: "App.js"
+    filename: "[name].js" // Dynamc file name to accomodate multi entry points
   },
   // Already used to bundle-up JS
   // Now will be used also to convert JS by 'babel'
