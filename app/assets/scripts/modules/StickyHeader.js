@@ -1,24 +1,48 @@
 // Module StickyHeader
+
 import $ from 'jquery';
+
 import waypoints from '../../../../node_modules/waypoints/lib/noframework.waypoints';
-              // Lib does not have main
+              // Waypoints Lib does not have main entry ???
+
 import smoothScroll from 'jquery-smooth-scroll';
 
 class StickyHeader {
   constructor() {
+    // Supplemental fix to get "Lazyload" and "Waypoint" working together
+    // idea: tell Waypoint to recalculate W-points upon loading of the images
+    this.lazyImages = $(".lazyload");
+
+    // feature: Sticky Header when scrolling up/down
     // alert('StickyHeader :  I am here !!! ');
     this.siteHeader = $(".site-header");
     this.headerTriggerElement = $(".large-hero__title");
     this.createHeaderWaypoint();
-    // feature of sticky header: Highlight Current Page Section
+
+    // feature: Highlight Current Page Section
     this.pageSections = $(".page-section"); // all CSS class="page-section"
     this.headerLinks = $(".primary-nav a"); // list of all primary-nav elements  anchors
     this.createPageSectionWaypoints();
     this.addSmoothScrolling();
+
+    // Recalculate waypoints positions in "lazyloaded" context
+    this.refreshWaypoints();
+  }
+
+  // Refresh - recalculate waypoints
+  refreshWaypoints() {
+    // When using current version of JQuery
+    // this.lazyimages.load(<function>);
+    // must be replaced by:
+    //  this.lazyimages.on("load",<function> );
+    // Discussion:  http://stackoverflow.com/questions/12643160/load-method-deprecated
+    //
+    this.lazyImages.on( "load" ,function() {
+       Waypoint.refreshAll();
+    });
   }
 
   // Smooth Scroll  npm package: npm install jquery-smooth-scroll --save
-
   addSmoothScrolling() {
     this.headerLinks.smoothScroll();
   }
@@ -40,7 +64,6 @@ class StickyHeader {
   }
 
   // Current page section Highlight feature
-
   createPageSectionWaypoints() {
     var that = this;
     this.pageSections.each(function() {

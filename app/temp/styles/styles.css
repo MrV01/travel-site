@@ -585,13 +585,18 @@ a {
   background-color: #2f5572;
   color: #FFF;
 }
+/* .page-section--testimonials */
 .page-section--testimonials {/* base settings for smaller screens */
-  background-color: #e0e6ef;/* nice background color */
+  background-color: #e0e6ef;/* nice background color *//* HTML element has CSS class="lazyload",
+      When it is time come  to  load something, NPM package loads it,
+      and  then replaces lazyload class name by lazyloaded name.
+      Following "mixin" CSS rule applies when class="lazyloaded" presents
+    */
 }
 /* lowr bracket reduced down from 1200
     because of 3 column layout in "_testimonials" section */
 @media ( min-width: 1010px) {
-  .page-section--testimonials {
+  .page-section--testimonials.lazyloaded {
     background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
     background-size: cover;
   }
