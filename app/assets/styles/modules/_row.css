@@ -118,8 +118,9 @@
   }
 
   /* Begin Equal Height Rules ( Testimonials section, etc) */
-
-  &--equal-height-at-medium {
+  /*  Works for 96% of browsers, that support flexbox */
+  /* Modernizr.js  sets up the class="flexbox" for us, when it is supported by client's br.*/
+  .flexbox &--equal-height-at-medium {
     @mixin atMedium {
       display: flex;  /* Using flex box CSS featue */
     }
@@ -130,7 +131,7 @@
     }
   }
 
-  &--equal-height-at-large {
+  .flexbox &--equal-height-at-large {
     @mixin atLarge {
       display: flex;  /* Using flex box CSS featue */
     }

@@ -37,7 +37,7 @@
     left: 50%; /* logo to the right half of the screen */
     transform: translateX(-50%) scale(.8); /* then move left 50%
                   of its own width and scale down to 80% */
-    transition: transform .3s ease-out;  /* Transition animation for shrinking Logo in stiky-header */             
+    transition: transform .3s ease-out;  /* Transition animation for shrinking Logo in stiky-header */
     transform-origin: 50% 0%; /* by default, horizontal 50% and vertical 50%
                   Then we change to 0% vertical origin point, and logo moves up  */
 
@@ -49,7 +49,7 @@
       transform: translateX(0); /* undo transform: for smaller screens*/
       /* Shrink Logo if the sticky header is scrolling dowm .i.e ".site-header--dark" class is present */
       .site-header--dark & {
-        transform: scale(.57);
+        transform: scale(.56);  /* scale reduced to .56 from .57 to accomodate extra padding in the sprite.svg/.png file */
       }
     }
   }
