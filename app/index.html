@@ -7,11 +7,13 @@
   <meta name="keywords" content="Travel planning, travel bundles, travel escapes, affordable travel">
   <meta name="description" content="Your clarity. One trip away. We create soul restoring journeys that inspire you to be you.">
 
-  <!-- build:css /assets/styles/styles.css -->
+  <!-- Remove forward / from usemin's build:css /assets/... to accomodate base domain-relative -->
+  <!-- In other words, web site is no longer require / of DNS domain  -->
+  <!-- build:css assets/styles/styles.css -->
   <link href='temp/styles/styles.css' rel="stylesheet" type="text/css">
   <!-- endbuild -->
   <!-- Lazyload NPM package, etc stuff, which required to run before page downloading finish  -->
-  <!-- build:js /assets/scripts/Vendor.js -->
+  <!-- build:js assets/scripts/Vendor.js -->
   <script src="/temp/scripts/Vendor.js"></script>
   <!-- endbuild-->
 
@@ -234,7 +236,7 @@
   </div>
 
   <!-- Main application JS file -->
-  <!-- build:js /assets/scripts/App.js -->
+  <!-- build:js assets/scripts/App.js -->
   <script src="/temp/scripts/App.js"></script>
   <!-- endbuild -->
 </body>

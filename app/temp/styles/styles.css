@@ -597,7 +597,7 @@ a {
     because of 3 column layout in "_testimonials" section */
 @media ( min-width: 1010px) {
   .page-section--testimonials.lazyloaded {
-    background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+    background: url('../../assets/images/testimonials-bg.jpg') top center no-repeat;
     background-size: cover;
   }
 }
@@ -953,12 +953,12 @@ a {
 */
 /* Generate list of classes using BEM naming convention */
 .icon {
-      background-image: url('/assets/images/sprites/sprite-8eb89099.svg');
+      background-image: url('../../assets/images/sprites/sprite-8eb89099.svg');
     }
 /* custom modernizr.js script set class="no-svg" (SVG is not supported by  client browser)*/
 /* therefore background image should be in PNG format sprite.png */
 .no-svg .icon {
-      background-image: url('/assets/images/sprites/sprite-8eb89099.png');
+      background-image: url('../../assets/images/sprites/sprite-8eb89099.png');
     }
 /* clear-view-escapes icon CSS map in the sprite file */
 .icon--clear-view-escapes {
