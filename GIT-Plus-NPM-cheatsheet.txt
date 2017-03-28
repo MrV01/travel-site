@@ -3038,3 +3038,189 @@ $ gulp build
 ### 1. Output directory has been renamed into  ./docs
 ### 2. In URLs directory passes /assets/... were changed to ../../assets/...
 #######################
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/travel-site (master)
+$ git status
+warning: LF will be replaced by CRLF in app/temp/styles/styles.css.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in package.json.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in docs/assets/scripts/App-a34f8d3289.js.
+The file will have its original line endings in your working directory.
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   GIT-Plus-NPM-cheatsheet.txt
+        modified:   app/assets/styles/modules/_page-section.css
+        modified:   app/assets/styles/modules/_sprite.css
+        modified:   app/index.html
+        modified:   app/temp/styles/styles.css
+        deleted:    dist/assets/scripts/App.js
+        deleted:    dist/assets/scripts/Vendor.js
+        deleted:    dist/assets/styles/styles.css
+        renamed:    dist/assets/images/first-trip-hi-dpi-i.jpg -> docs/assets/images/first-trip-hi-dpi-i.jpg
+        renamed:    dist/assets/images/first-trip-hi-dpi.jpg -> docs/assets/images/first-trip-hi-dpi.jpg
+        renamed:    dist/assets/images/first-trip-i.jpg -> docs/assets/images/first-trip-i.jpg
+        renamed:    dist/assets/images/first-trip-low-res-i.jpg -> docs/assets/images/first-trip-low-res-i.jpg
+        renamed:    dist/assets/images/first-trip-low-res.jpg -> docs/assets/images/first-trip-low-res.jpg
+        renamed:    dist/assets/images/first-trip.jpg -> docs/assets/images/first-trip.jpg
+        renamed:    dist/assets/images/hero--large-hi-dpi-i.jpg -> docs/assets/images/hero--large-hi-dpi-i.jpg
+        renamed:    dist/assets/images/hero--large-hi-dpi.jpg -> docs/assets/images/hero--large-hi-dpi.jpg
+        renamed:    dist/assets/images/hero--large-i.jpg -> docs/assets/images/hero--large-i.jpg
+        renamed:    dist/assets/images/hero--large.jpg -> docs/assets/images/hero--large.jpg
+        renamed:    dist/assets/images/hero--medium-hi-dpi-i.jpg -> docs/assets/images/hero--medium-hi-dpi-i.jpg
+        renamed:    dist/assets/images/hero--medium-hi-dpi.jpg -> docs/assets/images/hero--medium-hi-dpi.jpg
+        renamed:    dist/assets/images/hero--medium-i.jpg -> docs/assets/images/hero--medium-i.jpg
+        renamed:    dist/assets/images/hero--medium.jpg -> docs/assets/images/hero--medium.jpg
+        renamed:    dist/assets/images/hero--small-hi-dpi-i.jpg -> docs/assets/images/hero--small-hi-dpi-i.jpg
+        renamed:    dist/assets/images/hero--small-hi-dpi.jpg -> docs/assets/images/hero--small-hi-dpi.jpg
+        renamed:    dist/assets/images/hero--small-i.jpg -> docs/assets/images/hero--small-i.jpg
+        renamed:    dist/assets/images/hero--small.jpg -> docs/assets/images/hero--small.jpg
+        renamed:    dist/assets/images/hero--smaller-hi-dpi-i.jpg -> docs/assets/images/hero--smaller-hi-dpi-i.jpg
+        renamed:    dist/assets/images/hero--smaller-hi-dpi.jpg -> docs/assets/images/hero--smaller-hi-dpi.jpg
+        renamed:    dist/assets/images/hero--smaller-i.jpg -> docs/assets/images/hero--smaller-i.jpg
+        renamed:    dist/assets/images/hero--smaller.jpg -> docs/assets/images/hero--smaller.jpg
+        renamed:    dist/assets/images/our-start-hi-dpi-i.jpg -> docs/assets/images/our-start-hi-dpi-i.jpg
+        renamed:    dist/assets/images/our-start-hi-dpi.jpg -> docs/assets/images/our-start-hi-dpi.jpg
+        renamed:    dist/assets/images/our-start-i.jpg -> docs/assets/images/our-start-i.jpg
+        renamed:    dist/assets/images/our-start-landscape-hi-dpi-i.jpg -> docs/assets/images/our-start-landscape-hi-dpi-i.jpg
+        renamed:    dist/assets/images/our-start-landscape-hi-dpi.jpg -> docs/assets/images/our-start-landscape-hi-dpi.jpg
+        renamed:    dist/assets/images/our-start-landscape-i.jpg -> docs/assets/images/our-start-landscape-i.jpg
+        renamed:    dist/assets/images/our-start-landscape-small-i.jpg -> docs/assets/images/our-start-landscape-small-i.jpg
+        renamed:    dist/assets/images/our-start-landscape-small.jpg -> docs/assets/images/our-start-landscape-small.jpg
+        renamed:    dist/assets/images/our-start-landscape.jpg -> docs/assets/images/our-start-landscape.jpg
+        renamed:    dist/assets/images/our-start-portrait-hi-dpi-i.jpg -> docs/assets/images/our-start-portrait-hi-dpi-i.jpg
+        renamed:    dist/assets/images/our-start-portrait-hi-dpi.jpg -> docs/assets/images/our-start-portrait-hi-dpi.jpg
+        renamed:    dist/assets/images/our-start-portrait-i.jpg -> docs/assets/images/our-start-portrait-i.jpg
+        renamed:    dist/assets/images/our-start-portrait.jpg -> docs/assets/images/our-start-portrait.jpg
+        renamed:    dist/assets/images/our-start.jpg -> docs/assets/images/our-start.jpg
+        renamed:    dist/assets/images/sprites/sprite-8eb89099.png -> docs/assets/images/sprites/sprite-8eb89099.png
+        renamed:    dist/assets/images/sprites/sprite-8eb89099.svg -> docs/assets/images/sprites/sprite-8eb89099.svg
+        renamed:    dist/assets/images/testimonial-cat-hi-dpi-i.jpg -> docs/assets/images/testimonial-cat-hi-dpi-i.jpg
+        renamed:    dist/assets/images/testimonial-cat-hi-dpi.jpg -> docs/assets/images/testimonial-cat-hi-dpi.jpg
+        renamed:    dist/assets/images/testimonial-cat-i.jpg -> docs/assets/images/testimonial-cat-i.jpg
+        renamed:    dist/assets/images/testimonial-cat.jpg -> docs/assets/images/testimonial-cat.jpg
+        renamed:    dist/assets/images/testimonial-jane-hi-dpi-i.jpg -> docs/assets/images/testimonial-jane-hi-dpi-i.jpg
+        renamed:    dist/assets/images/testimonial-jane-hi-dpi.jpg -> docs/assets/images/testimonial-jane-hi-dpi.jpg
+        renamed:    dist/assets/images/testimonial-jane-i.jpg -> docs/assets/images/testimonial-jane-i.jpg
+        renamed:    dist/assets/images/testimonial-jane.jpg -> docs/assets/images/testimonial-jane.jpg
+        renamed:    dist/assets/images/testimonial-john-hi-dpi-i.jpg -> docs/assets/images/testimonial-john-hi-dpi-i.jpg
+        renamed:    dist/assets/images/testimonial-john-hi-dpi.jpg -> docs/assets/images/testimonial-john-hi-dpi.jpg
+        renamed:    dist/assets/images/testimonial-john-i.jpg -> docs/assets/images/testimonial-john-i.jpg
+        renamed:    dist/assets/images/testimonial-john.jpg -> docs/assets/images/testimonial-john.jpg
+        renamed:    dist/assets/images/testimonials-bg.jpg -> docs/assets/images/testimonials-bg.jpg
+        new file:   docs/assets/scripts/App-a34f8d3289.js
+        new file:   docs/assets/scripts/Vendor-8a86e2a2de.js
+        new file:   docs/assets/styles/styles-c5f444f3fa.css
+        renamed:    dist/index.html -> docs/index.html
+        modified:   gulp/tasks/build.js
+        modified:   gulp/templates/sprite.css
+        modified:   package.json
+
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/travel-site (master)
+$ git commit -m 'Completed build task and modified directory structure and file passes up to github requirements'
+[master warning: LF will be replaced by CRLF in app/temp/styles/styles.css.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in package.json.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in docs/assets/scripts/App-a34f8d3289.js.
+The file will have its original line endings in your working directory.
+917a1ca] Completed build task and modified directory structure and file passes up to github requirements
+warning: LF will be replaced by CRLF in app/temp/styles/styles.css.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in docs/assets/scripts/App-a34f8d3289.js.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in package.json.
+The file will have its original line endings in your working directory.
+ 66 files changed, 218 insertions(+), 16448 deletions(-)
+ delete mode 100644 dist/assets/scripts/App.js
+ delete mode 100644 dist/assets/scripts/Vendor.js
+ delete mode 100644 dist/assets/styles/styles.css
+ rename {dist => docs}/assets/images/first-trip-hi-dpi-i.jpg (100%)
+ rename {dist => docs}/assets/images/first-trip-hi-dpi.jpg (100%)
+ rename {dist => docs}/assets/images/first-trip-i.jpg (100%)
+ rename {dist => docs}/assets/images/first-trip-low-res-i.jpg (100%)
+ rename {dist => docs}/assets/images/first-trip-low-res.jpg (100%)
+ rename {dist => docs}/assets/images/first-trip.jpg (100%)
+ rename {dist => docs}/assets/images/hero--large-hi-dpi-i.jpg (100%)
+ rename {dist => docs}/assets/images/hero--large-hi-dpi.jpg (100%)
+ rename {dist => docs}/assets/images/hero--large-i.jpg (100%)
+ rename {dist => docs}/assets/images/hero--large.jpg (100%)
+ rename {dist => docs}/assets/images/hero--medium-hi-dpi-i.jpg (100%)
+ rename {dist => docs}/assets/images/hero--medium-hi-dpi.jpg (100%)
+ rename {dist => docs}/assets/images/hero--medium-i.jpg (100%)
+ rename {dist => docs}/assets/images/hero--medium.jpg (100%)
+ rename {dist => docs}/assets/images/hero--small-hi-dpi-i.jpg (100%)
+ rename {dist => docs}/assets/images/hero--small-hi-dpi.jpg (100%)
+ rename {dist => docs}/assets/images/hero--small-i.jpg (100%)
+ rename {dist => docs}/assets/images/hero--small.jpg (100%)
+ rename {dist => docs}/assets/images/hero--smaller-hi-dpi-i.jpg (100%)
+ rename {dist => docs}/assets/images/hero--smaller-hi-dpi.jpg (100%)
+ rename {dist => docs}/assets/images/hero--smaller-i.jpg (100%)
+ rename {dist => docs}/assets/images/hero--smaller.jpg (100%)
+ rename {dist => docs}/assets/images/our-start-hi-dpi-i.jpg (100%)
+ rename {dist => docs}/assets/images/our-start-hi-dpi.jpg (100%)
+ rename {dist => docs}/assets/images/our-start-i.jpg (100%)
+ rename {dist => docs}/assets/images/our-start-landscape-hi-dpi-i.jpg (100%)
+ rename {dist => docs}/assets/images/our-start-landscape-hi-dpi.jpg (100%)
+ rename {dist => docs}/assets/images/our-start-landscape-i.jpg (100%)
+ rename {dist => docs}/assets/images/our-start-landscape-small-i.jpg (100%)
+ rename {dist => docs}/assets/images/our-start-landscape-small.jpg (100%)
+ rename {dist => docs}/assets/images/our-start-landscape.jpg (100%)
+ rename {dist => docs}/assets/images/our-start-portrait-hi-dpi-i.jpg (100%)
+ rename {dist => docs}/assets/images/our-start-portrait-hi-dpi.jpg (100%)
+ rename {dist => docs}/assets/images/our-start-portrait-i.jpg (100%)
+ rename {dist => docs}/assets/images/our-start-portrait.jpg (100%)
+ rename {dist => docs}/assets/images/our-start.jpg (100%)
+ rename {dist => docs}/assets/images/sprites/sprite-8eb89099.png (100%)
+ rename {dist => docs}/assets/images/sprites/sprite-8eb89099.svg (100%)
+ rename {dist => docs}/assets/images/testimonial-cat-hi-dpi-i.jpg (100%)
+ rename {dist => docs}/assets/images/testimonial-cat-hi-dpi.jpg (100%)
+ rename {dist => docs}/assets/images/testimonial-cat-i.jpg (100%)
+ rename {dist => docs}/assets/images/testimonial-cat.jpg (100%)
+ rename {dist => docs}/assets/images/testimonial-jane-hi-dpi-i.jpg (100%)
+ rename {dist => docs}/assets/images/testimonial-jane-hi-dpi.jpg (100%)
+ rename {dist => docs}/assets/images/testimonial-jane-i.jpg (100%)
+ rename {dist => docs}/assets/images/testimonial-jane.jpg (100%)
+ rename {dist => docs}/assets/images/testimonial-john-hi-dpi-i.jpg (100%)
+ rename {dist => docs}/assets/images/testimonial-john-hi-dpi.jpg (100%)
+ rename {dist => docs}/assets/images/testimonial-john-i.jpg (100%)
+ rename {dist => docs}/assets/images/testimonial-john.jpg (100%)
+ rename {dist => docs}/assets/images/testimonials-bg.jpg (100%)
+ create mode 100644 docs/assets/scripts/App-a34f8d3289.js
+ create mode 100644 docs/assets/scripts/Vendor-8a86e2a2de.js
+ create mode 100644 docs/assets/styles/styles-c5f444f3fa.css
+ rename {dist => docs}/index.html (97%)
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/travel-site (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/travel-site (master)
+$ git push origin master
+Counting objects: 27, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (24/24), done.
+Writing objects: 100% (27/27), 56.89 KiB | 0 bytes/s, done.
+Total 27 (delta 10), reused 0 (delta 0)
+remote: Resolving deltas: 100% (10/10), completed with 10 local objects.
+To https://github.com/MrV01/travel-site.git
+   405c439..917a1ca  master -> master
+
+##############################################
+### Finally enable  "GitHub Pages"  from  https://github.com/MrV01/travel-site.git
+###   "settings" menu  Source: "master branch/docs folder"  -> Save
+### ( docs ) pages for our repo on github
+##############################################
+### URL name of the travel web site is :
+###  https://mrv01.github.io/travel-site/
+###
+
+
+######  SUCCESS !!!!
