@@ -147,7 +147,7 @@ origin  https://github.com/LearnWebCode/travel-site-files.git (push)
 
 ### Modify destinations to new repository, like :
 #### https://github.com/MrV01/travel-site.git
-$ git  remote set-url origin https://github.com/MrV01/travel-site.git
+$ git remote set-url origin https://github.com/MrV01/travel-site.git
 $ git remote -v
 origin  https://github.com/MrV01/travel-site.git (fetch)
 origin  https://github.com/MrV01/travel-site.git (push)
