@@ -1,9 +1,9 @@
 // SCSS conversion
 require('./gulp/tasks/styles');
-// Browser Sync
+// Browser Sync. Live preview of the site
 require('./gulp/tasks/watch');
 // SVG files conversion
-require('./gulp/tasks/sprites');
+// require('./gulp/tasks/sprites');
 
 // Integrate webpack into gulp automation
 // We prefer not to use webpack  automation features ( too much webpack configurations required  )
@@ -15,7 +15,7 @@ require('./gulp/tasks/scripts');
 // the modernizr.js adds class to <html> tag: <html class=" svg">
 //  it means that client's browser supports SVG sprite,
 // and no need to download and use .png file for icons.
-require('./gulp/tasks/modernizr');
+// require('./gulp/tasks/modernizr');
 
-// Build task for production 
-require('./gulp/tasks/build');
+// Build task for production
+// require('./gulp/tasks/build');
