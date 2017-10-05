@@ -1,0 +1,587 @@
+/* Import normalize.css npm package */
+/*  npm install --save normalize.css */
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+html {
+  line-height: 1.15; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0;
+}
+/**
+ * Add the correct display in IE 9-.
+ */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+figcaption,
+figure,
+main { /* 1 */
+  display: block;
+}
+/**
+ * Add the correct margin in IE 8.
+ */
+figure {
+  margin: 1em 40px;
+}
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent; /* 1 */
+  -webkit-text-decoration-skip: objects; /* 2 */
+}
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
+}
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+b,
+strong {
+  font-weight: inherit;
+}
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+dfn {
+  font-style: italic;
+}
+/**
+ * Add the correct background and color in IE 9-.
+ */
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+video {
+  display: inline-block;
+}
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+img {
+  border-style: none;
+}
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input { /* 1 */
+  overflow: visible;
+}
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select { /* 1 */
+  text-transform: none;
+}
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+html [type="button"], /* 1 */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+}
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+textarea {
+  overflow: auto;
+}
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+[type="checkbox"],
+[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+details, /* 1 */
+menu {
+  display: block;
+}
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+canvas {
+  display: inline-block;
+}
+/**
+ * Add the correct display in IE.
+ */
+template {
+  display: none;
+}
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+[hidden] {
+  display: none;
+}
+/* Import POSTCSS base of the project*/
+/* mainBlue Color code */
+/* mainOrange Color code */
+/* Mixins are "reusable bits of code" plug-in */
+/* Mixin to clear floats in .css files */
+/* Global CSS file is using _variables and _mixins */
+/* Global CSS  to trickle down to each element */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+/* In recent years box-sizing: border-box CSS property  */
+/* Is added into global setting for each element to overwrite
+   browsers defaults */
+/* Browser will not add padding to the total width of row */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/* Links are orange colored globally  */
+a {
+  color: #d59541; 
+}
+/* Import POSTCSS modules of the project*/
+/*@import "modules/_large-hero";*/
+/*@import "modules/_btn";*/
+/* Import padding-wrapper file  */
+/*@import "modules/_wrapper";*/
+/* Import page section file */
+/*@import "modules/_page-section";*/
+/* Import headline block file */
+/*@import "modules/_headline";*/
+/* Import reusable column pattern file*/
+/*@import "modules/_row";*/
+/* Generic content container. Temp deviation from BEM */
+/*@import "modules/_generic-content-container";*/
+/* Section title "our features" */
+/*@import "modules/_section-title";*/
+/* Section Our features --> feature-item */
+/*@import "modules/_feature-item";*/
+/* Section Testimonials  */
+/*@import "modules/_testimonial";*/
+/* Sprite file  AUTO generated import */
+/*@import "modules/_sprite";*/
+/* Site footer */
+/*@import "modules/_site-footer";*/
+/* Site header */
+/* Site Header file */
+.site-header {
+  padding:10px 0;  /* padding 10 px from design file */
+  position: absolute; /* take off from normal flow */
+  width: 100%;  /* use all availiable width */
+  z-index: 2; /* (2 > nothing ) put on top of large-herow section */
+  -webkit-transition: background-color .3s ease-out;
+  transition: background-color .3s ease-out;
+}
+/* site-header--is-expanded  (MobileMenu.js) */
+.site-header--is-expanded {
+    background-color: rgba(47,85,114, .55 ); /* 55% opacity*/
+  }
+/* transition for a smaller screens */
+@media ( min-width: 800px) {
+.site-header { /* Nav bar is for medium and large screens */
+    position: fixed;
+    /* !!! Where postcss plugin postcss-hexrgba will transform #ffffff to rgba() format */
+    background-color: rgba(47,85,114,.3) /* $mainBlue = #2f5572 */
+    /* site-header--dark  CSS class for "fixed header" feature */
+}
+    .site-header--dark {
+      background-color: rgba(23,51,72,.85); /* darker blue color for fixed header */
+    }
+  }
+/* site-header__btn-container */
+@media ( min-width: 800px) {
+.site-header__btn-container { /* float to right for medium to large screens */
+      float: right
+  }
+  }
+.site-header__logo {
+    position: absolute;
+    top: 0 ;  /* compansate for padding in class="site-header" */
+
+    left: 50%; /* logo to the right half of the screen */
+    -webkit-transform: translateX(-50%) scale(.8);
+            transform: translateX(-50%) scale(.8); /* then move left 50%
+                  of its own width and scale down to 80% */
+    -webkit-transition: -webkit-transform .3s ease-out;
+    transition: -webkit-transform .3s ease-out;
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out;  /* Transition animation for shrinking Logo in stiky-header */
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%; /* by default, horizontal 50% and vertical 50%
+                  Then we change to 0% vertical origin point, and logo moves up  */
+
+    background-color: #2f5572;
+    padding: 25px 36px;
+  }
+@media ( min-width: 800px) {
+.site-header__logo {  /* position logo for larger screens */
+      left: auto; /* undo left: of the small screens*/
+      -webkit-transform: translateX(0);
+              transform: translateX(0) /* undo transform: for smaller screens*/
+      /* Shrink Logo if the sticky header is scrolling dowm .i.e ".site-header--dark" class is present */
+  }
+      .site-header--dark .site-header__logo {
+        -webkit-transform: scale(.56);
+                transform: scale(.56);  /* scale reduced to .56 from .57 to accomodate extra padding in the sprite.svg/.png file */
+      }
+  }
+.site-header__logo__graphic {
+    text-indent: -9999px; /* hide text without hiding element itself */
+  }
+.site-header__menu-icon { /* mobile icon - sandwich */
+    width: 20px;
+    height: 19px;
+    /* background-color: #FFF; // commented out to make it invisible */
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    right: 10px;
+  }
+/* Horiz bar: class= site-header__menu-icon__top ( MobileMenu.js ) */
+.site-header__menu-icon::before {
+      content: "" ; /* to make the pseudo element appear on screen */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: #FFF;
+      -webkit-transform-origin: 0 0;
+              transform-origin: 0 0; /* rotation point in 50% 50% (middle point) by default */
+      -webkit-transition: -webkit-transform .3s ease-out;
+      transition: -webkit-transform .3s ease-out;
+      transition: transform .3s ease-out;
+      transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+    }
+/* site-header__menu-icon__middle ( MobileMenu.js )*/
+.site-header__menu-icon__middle {
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: #FFF;
+      -webkit-transition: all .3s ease-out;
+      transition: all .3s ease-out; /* transition all properties, baside opacity */
+      -webkit-transform-origin: 0 50%;
+              transform-origin: 0 50%;  /* reason: middle bar is fading to the left */
+    }
+/* site-header__menu-icon__bottom ( MobileMenu.js )*/
+.site-header__menu-icon::after {
+      content: ""; /* appear on the sreen */
+      position: absolute;
+      bottom: 0; /* at the very bottom :-) */
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: #FFF;
+      -webkit-transform-origin: 0 100%;
+              transform-origin: 0 100%;
+      -webkit-transition: -webkit-transform .3s ease-out;
+      transition: -webkit-transform .3s ease-out;
+      transition: transform .3s ease-out;
+      transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+    }
+/* Sandwich menue icon Animating Hamburger */
+@media ( min-width: 800px) {
+.site-header__menu-icon { /* do not show on larger screens */
+      display: none
+  }
+  }
+/* Create  X from the three bars "sandwich menu"  */
+.site-header__menu-icon--close-x::before {
+      -webkit-transform: rotate(45deg) scaleX(1.25);
+              transform: rotate(45deg) scaleX(1.25);
+    }
+.site-header__menu-icon--close-x .site-header__menu-icon__middle {
+      opacity: 0; /* still present, but invisible */
+      -webkit-transform: scaleX(0);
+              transform: scaleX(0);
+    }
+.site-header__menu-icon--close-x::after {
+      -webkit-transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+              transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+    }
+.site-header__menu-content {
+    /* Baseline for small screens:  */
+    opacity: 0; /*  invisible for small screens */
+                /* repaced the display: none property */
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2); /* zoom 120% */
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out; /* transition of ALL properties, instead of "opacity" only */
+    position: relative;
+    z-index: -10; /* hide it from accidental clicking  */
+    padding-top: 90px;  /* Shift down from logo image */
+    text-align: center;
+  }
+@media ( min-width: 800px) {
+.site-header__menu-content { /* Nav menue items are visible starting from medium screens*/
+      opacity: 1;   /*  instead of display: block; */
+      -webkit-transform: scale(1);
+              transform: scale(1); /* zoom always 100%  */
+      z-index: 1;   /* can click now */
+      padding-top: 0 /* Logo is on the left, no NAV bar shift required */
+  }
+  }
+/* site-header__menu-content--is-visible */
+.site-header__menu-content--is-visible {  /*  NAV menue content is visible (MobileMenu.js) */
+      opacity: 1; /* replaced the display:block property  */
+      -webkit-transform: scale(1);
+              transform: scale(1); /* zoom back to 100% */
+      z-index: 1; /* now can click it */
+    }
+/* nav Primary navigation style */
+/*@import "modules/_primary-nav";*/
+/* Reveal item new class="reveal-item" */
+/*@import "modules/_reveal-item";*/
+/* Create Overlay, or Modal, or light box */
+/*@import "modules/_modal";*/
+/* Social Icons */
+/*@import "modules/_social-icons";*/

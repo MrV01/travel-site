@@ -17,7 +17,8 @@ module.exports = {
       {
         loader: 'babel-loader',
         query: {
-            presets: ['es2015']
+          presets: ['es2015'] //   ES6 standard : npm install --save-dev babel-preset-es2015
+          // presets: ['env']   // ES6+ standard:  npm install --save-dev babel-preset-env
         },
         test: /\.js$/,   // regular expression: Convert .js files
         exclude: /node_modules/      // RegExp  , except node_modules

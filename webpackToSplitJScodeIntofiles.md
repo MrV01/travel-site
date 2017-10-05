@@ -110,13 +110,23 @@ module.exports = {
 
 ```
 
-
 5. Practicing the  ES6
 
+1. App.js  
+"import xxx from yyy"  instead of  xxx = require('yyy');
+
+2. App.js  
+   class Adult extends Person {
+        payTaxes() {  ...  };
+  }
 
 
 
-6. How to use JavaScript in the web site, OR  how to avoid "jQuery spagetti code". Lecture 42.  
+6. How to use JavaScript (ES6) in the web site, OR  how to avoid "jQuery spagetti code". Lecture 42.  
+
+ File:  app/assets/scripts/modules/MobileMenu.js
+
+
 
 
 XX.  "Set of tools to use depends of the problem to solve."

@@ -7,11 +7,17 @@
 //     use the feaure responsively :-(
 // Webpack  also supports  'import   ... from ...' Node ES6 statement
 //
+
+import MobileMenu from './modules/MobileMenu';
+
+var mobileMenu = new MobileMenu();
+
+//////////////////////////////////////////////////////////////////////////////////////////////
 var $  = require('jquery');
 // NodeJS way:
 // var Person = require("./modules/Person");
 // ES6 way of import
-import Person from './modules/Person'; 
+import Person from './modules/Person';
 // ES6 subclass definition
 class Adult extends Person {
    payTaxes() {
@@ -21,11 +27,11 @@ class Adult extends Person {
 }
 
 // alert("this is a DEFINITE test for our webpack automation!!!!");
-
+// Demonstration of  ES6 classes  And jQuery meddling with DOM
 var john = new Person("John Doe", "blue");
 var jane = new Adult("Jane Swiss", "green");
 
 $("h1").after("<p>" + john.greet() + "</p>"  + "<p>" +  jane.greet() + " </br> " + jane.payTaxes() + "</p>"  )
-            .css({ 'color': 'red', 'font-size': '150%'  });
-$("p").first().css({ 'background-color': 'yellow', 'font-size': '200%'  });
-$("p").last().css({ 'color': 'green',  'background-color': 'pink', 'font-size': '300%' });
+            .css({ 'color': 'red', 'font-size': '100%'  });
+$("p").first().css({ 'background-color': 'yellow', 'font-size': '100%'  });
+$("p").last().css({ 'color': 'green',  'background-color': 'pink', 'font-size': '100%' });

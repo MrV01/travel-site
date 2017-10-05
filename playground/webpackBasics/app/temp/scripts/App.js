@@ -60,128 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _Person2 = __webpack_require__(1);
-
-var _Person3 = _interopRequireDefault(_Person2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-//  We think, that we need jQuery in the App.js right away.
-// Just  do :  npm install jquery --save
-// and 'require it in the webpack as shown below.
-// Drawback:  ~10,000 lines of jQuery code are injected into the App.js bundle.
-//     use the feaure responsively :-(
-// Webpack  also supports  'import   ... from ...' Node ES6 statement
-//
-var $ = __webpack_require__(2);
-// NodeJS way:
-// var Person = require("./modules/Person");
-// ES6 way of import
-
-// ES6 subclass definition
-var Adult = function (_Person) {
-  _inherits(Adult, _Person);
-
-  function Adult() {
-    _classCallCheck(this, Adult);
-
-    return _possibleConstructorReturn(this, (Adult.__proto__ || Object.getPrototypeOf(Adult)).apply(this, arguments));
-  }
-
-  _createClass(Adult, [{
-    key: 'payTaxes',
-    value: function payTaxes() {
-      var taxAmount = this.name + ' now ows $0.00 in taxes. ';
-      return taxAmount;
-    }
-  }]);
-
-  return Adult;
-}(_Person3.default);
-
-// alert("this is a DEFINITE test for our webpack automation!!!!");
-
-var john = new _Person3.default("John Doe", "blue");
-var jane = new Adult("Jane Swiss", "green");
-
-$("h1").after("<p>" + john.greet() + "</p>" + "<p>" + jane.greet() + " </br> " + jane.payTaxes() + "</p>").css({ 'color': 'red', 'font-size': '150%' });
-$("p").first().css({ 'background-color': 'yellow', 'font-size': '200%' });
-$("p").last().css({ 'color': 'green', 'background-color': 'pink', 'font-size': '300%' });
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-// Contains module Person . For webpack assembly.
-// Lets use some  ES6 to engage Babel-webpack-loader
-//
-var Person = function () {
-  function Person(fullName, favColor) {
-    _classCallCheck(this, Person);
-
-    this.name = fullName;
-    this.favoriteColor = favColor;
-  }
-
-  _createClass(Person, [{
-    key: "greet",
-    value: function greet() {
-      var grt = "Hi There my name is  " + this.name + " , my favorite color is " + this.favoriteColor;
-      console.log(grt);
-      return grt;
-    }
-  }]);
-
-  return Person;
-}();
-
-// function Person(fullName, favoriteColor) {
-//   this.name = fullName;
-//   this.color = favoriteColor;
-//   this.greet = function () {
-//      var greet  = "Hi I am " + fullName + " my favorite color is " + favoriteColor;
-//      console.log(greet);
-//      return greet;
-//   };
-// };
-// NodeJS  way of exports
-// module.exports = Person;
-// ES6 way of  module exports
-
-
-exports.default = Person;
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10439,6 +10322,228 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _MobileMenu = __webpack_require__(2);
+
+var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
+
+var _Person2 = __webpack_require__(3);
+
+var _Person3 = _interopRequireDefault(_Person2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+//  We think, that we need jQuery in the App.js right away.
+// Just  do :  npm install jquery --save
+// and 'require it in the webpack as shown below.
+// Drawback:  ~10,000 lines of jQuery code are injected into the App.js bundle.
+//     use the feaure responsively :-(
+// Webpack  also supports  'import   ... from ...' Node ES6 statement
+//
+
+var mobileMenu = new _MobileMenu2.default();
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+var $ = __webpack_require__(0);
+// NodeJS way:
+// var Person = require("./modules/Person");
+// ES6 way of import
+
+// ES6 subclass definition
+var Adult = function (_Person) {
+  _inherits(Adult, _Person);
+
+  function Adult() {
+    _classCallCheck(this, Adult);
+
+    return _possibleConstructorReturn(this, (Adult.__proto__ || Object.getPrototypeOf(Adult)).apply(this, arguments));
+  }
+
+  _createClass(Adult, [{
+    key: 'payTaxes',
+    value: function payTaxes() {
+      var taxAmount = this.name + ' now ows $0.00 in taxes. ';
+      return taxAmount;
+    }
+  }]);
+
+  return Adult;
+}(_Person3.default);
+
+// alert("this is a DEFINITE test for our webpack automation!!!!");
+// Demonstration of  ES6 classes  And jQuery meddling with DOM
+
+
+var john = new _Person3.default("John Doe", "blue");
+var jane = new Adult("Jane Swiss", "green");
+
+$("h1").after("<p>" + john.greet() + "</p>" + "<p>" + jane.greet() + " </br> " + jane.payTaxes() + "</p>").css({ 'color': 'red', 'font-size': '100%' });
+$("p").first().css({ 'background-color': 'yellow', 'font-size': '100%' });
+$("p").last().css({ 'color': 'green', 'background-color': 'pink', 'font-size': '100%' });
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); //
+// ES6 mobile menu implementation
+//
+//  npm install  jqery --save
+//
+
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var MobileMenu = function () {
+    function MobileMenu() {
+        _classCallCheck(this, MobileMenu);
+
+        // alert("Testing from Mobile Menue"); // test test
+
+        ///////////////////////  OLD way of coding: "jQuery spagetti"
+        // Example of the jQuery  "spagetti code". Because In one statement:
+        // A. Select element from the DOM
+        // B. Event Handling
+        // C. Defining functionality
+        //
+        //   $(".site-header__menu-icon").click( function () {
+        //      console.log("Top right icon was clicked ");
+        //   });
+        //
+        /////////////////////////  New way of proper coding.
+
+        // A. Select  elements in DOM
+        //  Element  object reference stored in this object.
+        this.siteHeader = (0, _jquery2.default)(".site-header");
+        this.menuIcon = (0, _jquery2.default)("h1");
+        this.menuContent = (0, _jquery2.default)(".site-header__menu-content");
+        // Register events listener.
+        this.events();
+    } //  constructor()
+
+    // B. Event Handling
+    // Event listener, Method to call for watch for the ervents, related to this object
+
+
+    _createClass(MobileMenu, [{
+        key: "events",
+        value: function events() {
+            //  console.log('events function this : ',this);
+            // .bind creates new function with "this" keyword,
+            // "binded" to the object, provided as an argument ( i.e. class MobileMenu )
+            // Therefore, when the new function  will be called from registered "click" event,
+            //  it will call toggleTheMenu function with "this" pointing to  class MobileMenu
+            // similar way  a closure works.
+            //  this.menuIcon.click( this.toggleTheMenu.bind(this) );
+            this.menuIcon.click(this.toggleTheMenu.bind(this));
+        }
+
+        // C. Defining functionality
+        // Action method to responce to registered events.
+        //  Note: As of 10/04/2017  ES7  syntax like:  toggleTheMenu = () => {}
+        //  still does not pass through webpack babel-loader:
+        //       npm install --save-dev babel-loader babel-core babel-preset-env webpack
+        //  Probably will work with  yarn   package manager.
+        //  Is not tested, no spare time to be wasted :-(
+        //  Babel DEMO  ES7 transpiler ( http://babeljs.io )
+        //  process  toggleTheMenu = () => {} method's syntax just fine.
+        //
+
+    }, {
+        key: "toggleTheMenu",
+        value: function toggleTheMenu() {
+            // console.log('Something was clicked ! toggleTheMenu function this : ',this);
+            this.menuContent.toggleClass("site-header__menu-content--is-visible");
+            this.siteHeader.toggleClass("site-header--is-expanded");
+        }
+    }]);
+
+    return MobileMenu;
+}();
+
+exports.default = MobileMenu;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+// Contains module Person . For webpack assembly.
+// Lets use some  ES6 to engage Babel-webpack-loader
+//
+var Person = function () {
+  function Person(fullName, favColor) {
+    _classCallCheck(this, Person);
+
+    this.name = fullName;
+    this.favoriteColor = favColor;
+  }
+
+  _createClass(Person, [{
+    key: "greet",
+    value: function greet() {
+      var grt = "Hi There my name is  " + this.name + " , my favorite color is " + this.favoriteColor;
+      console.log(grt);
+      return grt;
+    }
+  }]);
+
+  return Person;
+}();
+
+// function Person(fullName, favoriteColor) {
+//   this.name = fullName;
+//   this.color = favoriteColor;
+//   this.greet = function () {
+//      var greet  = "Hi I am " + fullName + " my favorite color is " + favoriteColor;
+//      console.log(greet);
+//      return greet;
+//   };
+// };
+// NodeJS  way of exports
+// module.exports = Person;
+// ES6 way of  module exports
+
+
+exports.default = Person;
 
 /***/ })
 /******/ ]);
