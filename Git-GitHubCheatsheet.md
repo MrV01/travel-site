@@ -11,6 +11,8 @@
 
          git checkout new-branch-name
 
+         OR  1. + 2.        git checkout  -b  new-branch-name
+
     3.  Commit  changes to  new-branch-name  on local mashine
 
         git status

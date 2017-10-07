@@ -15,7 +15,7 @@ require('./gulp/tasks/scripts');
 // the modernizr.js adds class to <html> tag: <html class=" svg">
 //  it means that client's browser supports SVG sprite,
 // and no need to download and use .png file for icons.
-// require('./gulp/tasks/modernizr');
+require('./gulp/tasks/modernizr');
 
 // Build task for production
-// require('./gulp/tasks/build');
+require('./gulp/tasks/build');

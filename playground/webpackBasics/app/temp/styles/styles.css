@@ -578,7 +578,74 @@ a {
       z-index: 1; /* now can click it */
     }
 /* nav Primary navigation style */
-/*@import "modules/_primary-nav";*/
+.primary-nav {
+  /* background-color: #efefef; */
+  padding-top: 10px;
+}
+@media ( min-width: 800px) {
+.primary-nav {
+      padding-top: 0
+}
+  }
+@media ( min-width: 800px) {
+.primary-nav--pull-right { /* right float for medium to large screens*/
+      float: right
+  }
+  }
+/* any <ul> within primary-nav */
+.primary-nav ul {
+    margin: 0;
+    padding: 0;
+  }
+.primary-nav ul::after {
+    content: "";
+    clear:both;
+    display: table;
+  }
+/* any <li> within primary-nav */
+.primary-nav li {
+    list-style: none;
+    display: inline-block;
+    padding-right: 7px;
+  }
+/* to save space on smaller screens */
+@media ( min-width: 800px) {
+.primary-nav li {
+      padding-right: 20px; /* from the design file */
+      float: left;
+      display: block
+  }
+  }
+/* Save 7 to 20 px horizontal on smaller screens */
+.primary-nav li:last-child {
+    padding-right: 0;
+  }
+@media ( min-width: 800px) {
+.primary-nav li:last-child {
+      padding-right: 20px
+  }
+  }
+/* any <a> within primary-nav */
+.primary-nav a {
+    color: #FFF;
+    font-weight: 300;
+    text-decoration: none;
+    display:block; /* each a-elem is a block (padding, margine, etc are applicable)  */
+    padding: 5px 8px;  /* center vertically in the blue line  */
+    font-size: .8rem;
+    background-color: rgba(47,85,114, .5);
+  }
+@media ( min-width: 800px) {
+.primary-nav a {
+      font-size: 1rem;
+      padding: 12px 0;  /* center vertically in the blue line  */
+      background-color: transtparent
+  }
+
+      .primary-nav a.is-current-link {
+        color: #fabb69;  /* nice Orange color*/ 
+      }
+  }
 /* Reveal item new class="reveal-item" */
 /*@import "modules/_reveal-item";*/
 /* Create Overlay, or Modal, or light box */
